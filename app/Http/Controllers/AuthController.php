@@ -82,6 +82,12 @@ class AuthController extends Controller
     }
     public function welcome()
         {
-            return "welcome back";
+            return view('welcome');
+        }
+        public function logout(){
+            if (Session::has('loginid')){
+                Session::pull('loginid');
+                return redirect('login');
+            }
         }
     }
