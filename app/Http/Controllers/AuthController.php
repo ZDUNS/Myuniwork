@@ -61,20 +61,17 @@ class AuthController extends Controller
         if ($users) {
             if(hash::check($request->password,$users->password)) {
                 Session::put('loginid', $users->user_id);
-                return redirect ('welcomeback');
+                return redirect ('welcome');
             }
             else
             {
                 return back()->with('fail', 'Lietotāja vārds vai parole ir nepareiza!');
         }
-     } else{
-            return back()->with('fail', 'Lietotāja vārds vai parole ir nepareiza!');
-
-        }
+     } 
     }
     public function welcomeback(){
         if(Session::has('loginid')){
-            return view ('welcomeback');
+            return view ('welcome');
         }
         else redirect('');
     }

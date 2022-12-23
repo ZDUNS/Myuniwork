@@ -22,7 +22,7 @@
                 @endif
                 <div class="field space">
                 <!-- <label for="name">Lietotāja vārds</label> -->
-                <input type="text" class="form-control" placeholder="   Ievadiet lietotāja vārdu" name="name" value="{{ old('username') }}">
+                <input type="text" class="form-control" placeholder="   Ievadiet lietotāja vārdu" name="username" value="{{ old('username') }}">
                 <span class="text-danger">@error('username'){{$message}} @enderror</span>
                 </div>
                 <div class="field space">
