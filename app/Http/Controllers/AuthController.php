@@ -58,24 +58,30 @@ class AuthController extends Controller
         $request->validate([
             'username'=>'required',
             'password'=>'required|min:8|max:18'
+        ],
+            [
+                'username.required'=>'Lūdzu aizpildiet šo lauku!',
+                'password.required'=>'Lūdzu aizpildiet šo lauku!',
+                'password.min'=>'Parole ir nepareiza!',
+                'password.max'=>'Parole ir nepareiza!',
+
         ]);
         $users = User::where('username', '=', $request->username)->first();
         if ($users) {
-            if(hash::check($request->password,$users->password)) {
+            if(Hash::check($request->password,$users->password)) {
                 $request->session()->put('loginid', $users->user_id);
                 return redirect ('welcome');
             }
             else
             {
-                return back()->with('fail', 'Lietotāja vārds vai parole ir nepareiza!');
+                return back()->with('fail', 'Parole ir nepareiza!');
         }
      } else {
-        return back()->with('fail', 'Lietotāja vārds vai parole ir nepareiza!');
+        return back()->with('fail', 'Lietotājs ar šādu lietotāja vārdu neeksistē!');
      }
     }
-    public function welcome(){
+    public function welcome()
         {
             return "welcome back";
         }
     }
-}

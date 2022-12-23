@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('lastName');
             $table->string('birthDat')->nullable();
             $table->integer('blocked')->unsigned()->default(0);
-            $table->string('Password');
+            $table->string('password');
             $table->boolean('AdminUser')->default(false);
             $table->boolean('CreatorUser')->default(false);
             $table->rememberToken();

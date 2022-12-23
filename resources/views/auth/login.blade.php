@@ -23,13 +23,13 @@
                 <div class="field space">
                 <!-- <label for="name">Lietotāja vārds</label> -->
                 <input type="text" class="form-control" placeholder="   Ievadiet lietotāja vārdu" name="username" value="{{ old('username') }}">
-                <span class="text-danger">@error('username'){{$message}} @enderror</span>
                 </div>
+                <span class="text-danger">@error('username'){{$message}} @enderror</span>
                 <div class="field space">
                 <!-- <label for="password">Parole</label> -->
                 <input type="password" class="form-control" placeholder="   Ievadiet paroli" name="password" value="{{ old('password') }}">
-                <span class="text-danger">@error('password'){{$message}} @enderror</span>
                 </div>
+                <span class="text-danger">@error('password'){{$message}} @enderror</span>
                 <div class="pass">
                     <a href="#">Aizmirsāt paroli?</a>
                 </div>

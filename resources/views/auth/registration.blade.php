@@ -23,28 +23,28 @@
                 <div class="field space">
                     <!-- <label for="name">Pilns vārds</label> -->
                 <input type="text" class="form-control" placeholder="   Ievadiet pilnu vārdu" name="firstName" value="{{ old('firstName') }}">
-                <span class="text-danger">@error('firstName'){{$message}} @enderror</span>
                 </div>
+                <span class="text-danger">@error('firstName'){{$message}} @enderror</span>
                 <div class="field space">
                     <!-- <label for="name">Pilns uzvārds</label> -->
                 <input type="text" class="form-control" placeholder="   Ievadiet pilnu uzvārdu" name="lastName" value="{{ old('lastName') }}">
-                <span class="text-danger">@error('lastName'){{$message}} @enderror</span>
                 </div>
+                <span class="text-danger">@error('lastName'){{$message}} @enderror</span>
                 <div class="field space">
                     <!-- <label for="name">Lietotāja vārds</label> -->
                 <input type="text" class="form-control" placeholder="   Ievadiet lietotāja vārdu" name="username" value="{{ old('username') }}">
-                <span class="text-danger">@error('username'){{$message}} @enderror</span>
                 </div>
+                <span class="text-danger">@error('username'){{$message}} @enderror</span>
                 <div class="field space">
                     <!-- <label for="email">E-pasta adrese</label> -->
                 <input type="text" class="form-control" placeholder="   Ievadiet E-pasta adresi" name="email" value="{{ old('email') }}">
-                <span class="text-danger">@error('email'){{$message}} @enderror</span>
                 </div>
+                <span class="text-danger">@error('email'){{$message}} @enderror</span>
                 <div class="field space">
                     <!-- <label for="password">Parole</label> -->
                 <input type="password" class="form-control" placeholder="   Ievadiet paroli" name="password" value="{{ old('password') }}">
-                <span class="text-danger">@error('password'){{$message}} @enderror</span>
                 </div>
+                <span class="text-danger">@error('password'){{$message}} @enderror</span>
                 <div class="pass"></div>
                 <div class="field">
                 <input type="submit" value="Reģistrēties"></div>
