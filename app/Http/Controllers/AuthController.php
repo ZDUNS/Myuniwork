@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Hash;
 
 class AuthController extends Controller
 {
@@ -43,7 +44,7 @@ class AuthController extends Controller
         $users->firstName = $request->firstName;
         $users->lastName = $request->lastName;
         $users->email = $request->email;
-        $users->password = $request-> password;
+        $users->password = Hash::make($request-> password);
         $res=$users->save();
         if($res){
             return back()->with('success', 'Jūs esat veiksmīgi reģistrējušies!');
@@ -59,26 +60,11 @@ class AuthController extends Controller
         ]);
         $users = User::where('username', '=', $request->username)->first();
         if ($users) {
-            if(hash::check($request->password,$users->password)) {
-                Session::put('loginid', $users->user_id);
-                return redirect ('welcome');
+           
             }
             else
             {
                 return back()->with('fail', 'Lietotāja vārds vai parole ir nepareiza!');
-        }
-     } 
-    }
-    public function welcomeback(){
-        if(Session::has('loginid')){
-            return view ('welcome');
-        }
-        else redirect('');
-    }
-    public function logout(){
-        if(Session::has('loginid')){
-            Session::pull('loginid');
-            return redirect('');
         }
     }
 }
