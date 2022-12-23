@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Hash;
+use Session;
 
 class AuthController extends Controller
 {
@@ -55,16 +56,26 @@ class AuthController extends Controller
     }
     public function loginUser(Request $request){
         $request->validate([
-            'username'=>'required||unique:users',
+            'username'=>'required',
             'password'=>'required|min:8|max:18'
         ]);
         $users = User::where('username', '=', $request->username)->first();
         if ($users) {
-           
+            if(hash::check($request->password,$users->password)) {
+                $request->session()->put('loginid', $users->user_id);
+                return redirect ('welcome');
             }
             else
             {
                 return back()->with('fail', 'Lietotāja vārds vai parole ir nepareiza!');
+        }
+     } else {
+        return back()->with('fail', 'Lietotāja vārds vai parole ir nepareiza!');
+     }
+    }
+    public function welcome(){
+        {
+            return "welcome back";
         }
     }
 }
