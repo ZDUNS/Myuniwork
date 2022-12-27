@@ -1,10 +1,11 @@
 <?php
-
+namespace App\Http\Requests\Vehicle\StoreRequest;
 namespace App\Http\Controllers;
+use App\Models\Vehicle;
 
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class StoreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view ('Vehicle');
+       //
     }
 
     /**
@@ -34,7 +35,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->except(['_token']);//lai nav token_id errora
+        $rules = $rules = array(
+            'name'=> 'required | string',
+        );
+        $this->validate($request, $rules);
+        Vehicle::firstOrCreate($data);
+        return redirect('Create');
     }
 
     /**

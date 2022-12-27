@@ -11,7 +11,6 @@
   <link href="/img/mt.-fuji-BLOG-mountains.png" rel="icon">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
-
 </head>
 <body>
 <header id="header" class="fixed-top d-flex align-items-center header-transparent">
@@ -19,7 +18,7 @@
 
       <div class="row justify-content-center align-items-center">
         <div class="col-xl-11 d-flex align-items-center justify-content-between">
-          <h1 class="logo"><a>Atrodi Ceļabiedru</a></h1>
+          <h1 class="logo"><a>Ceļojuma veidi</a></h1>
           <nav id="navbar" class="navbar">
             <ul>
               <li><a class="nav-link scrollto active" href="#hero">Galvenais skats</a></li>
@@ -41,8 +40,8 @@
                     </ul>
                   </li>
                   <li><a href="{{ url('createPost') }}">Izveidot diskusiju</a></li>
-                  <li><a href="#">Drop Down 3</a></li>
-                  <li><a href="#">Drop Down 4</a></li>
+                  <li><a href="{{ url('Vehicle') }}">Ceļojuma veidi</a></li>
+                  <li><a href="{{ url('Create') }}">Pievienot Ceļojuma veidu</a></li>
                 </ul>
               </li>
               <li><a class="nav-link scrollto" href="#contact">idk</a></li>
@@ -61,7 +60,7 @@
           <h3 class="section-title">Ceļojuma iedvesmas foto</h3>
         </header>
 
-        <div class="row" data-aos="fade-up" data-aos-delay="100"">
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
       <div class=" col-lg-12">
           <ul id="portfolio-flters">
             <li data-filter="*" class="filter-active">Visi</li>

@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('places', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->unsignedInteger('vehicle_id')->references('id')->on('vehicle');
+           // $table->unsignedInteger('vehicle_id')->references('id')->on('vehicle');
             $table->string('name');
-            $table->text('description');
-            $table->integer('closed')->unsigned()->default(0);
+           // $table->text('description');
+           // $table->integer('closed')->unsigned()->default(0);
         });
     }
 
