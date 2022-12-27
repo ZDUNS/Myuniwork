@@ -37,7 +37,7 @@ class StoreController extends Controller
     {
         $data = $request->except(['_token']);//lai nav token_id errora
         $rules = $rules = array(
-            'name'=> 'required | string',
+            'name'=> 'required | string |min:3|max:191 | unique:vehicle',
         );
         $this->validate($request, $rules);
         Vehicle::firstOrCreate($data);

@@ -64,6 +64,9 @@
                     @csrf
                     <div class="form-group">
                         <input type="text" class="form-control" name="name" placeholder="Ceļojuma veida nosaukums">
+                        @error('name')
+                    </div class="text-danger">Lūdzu aizpildiet šo lauku</div>
+                        @enderror
                     </div>
                     <input type="submit" class="btn btn-primary" value="Pievienot">
                 </form>

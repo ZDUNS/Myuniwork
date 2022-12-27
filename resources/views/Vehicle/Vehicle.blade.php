@@ -60,7 +60,22 @@
                 <a href="#" type="button" class="btn btn-block btn-promary">Pievienot</a>
             </div>
             <div class="col-12">
-                Ceļojuma veidi
+            </div class="card">
+            <div class="card-body table-responsive p-0">
+              <table class="table table-hover text-nowrap">
+                <thead>
+                  @foreach($vehicles as $vehicles)
+                  <tr>
+                    <td>{{ $vehicles->id }}</td>
+                    <td>{{ $vehicles->name }}</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    @endforeach
+                  </tr>
+                </tbody>
+              </table>
             </div>
         </div>
     </div>

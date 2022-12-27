@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('vehicle', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('name');
+            $table->string('name')->unique();
         });
     }
 
