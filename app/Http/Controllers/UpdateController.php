@@ -1,11 +1,11 @@
 <?php
-namespace App\Http\Requests\Vehicle\StoreRequest;
+
 namespace App\Http\Controllers;
+
 use App\Models\Vehicle;
-
+use App\Http\Requests\UpdateRequest;
 use Illuminate\Http\Request;
-
-class StoreController extends Controller
+class UpdateController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class StoreController extends Controller
      */
     public function index()
     {
-       //
+        //
     }
 
     /**
@@ -35,21 +35,7 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->except(['_token']);//lai nav token_id errora
-        //$rules = $rules = array(
-           // 'name'=> 'required | string |min:3|max:191 | unique:vehicle',
-       // );
-        //$this->validate($request, $rules);
-        $request->validate([
-            'name'=>'required | string |min:3|max:100 | unique:vehicle',
-        ],
-            [
-                'name.required'=>'Lūdzu aizpildiet šo lauku!',
-                'name.unique'=>'Šāds ceļojuma veids jau eksistē!',
-
-        ]);
-        Vehicle::firstOrCreate($data);
-        return redirect('Create');
+        //
     }
 
     /**
@@ -81,9 +67,11 @@ class StoreController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateRequest $request,Vehicle $vehicles)
     {
-        //
+        $data = $request->validated();
+        $vehicles->update($data);
+        return view('Vehicle.show', compact('vehicles'));
     }
 
     /**

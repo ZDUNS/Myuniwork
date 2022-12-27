@@ -57,28 +57,18 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <a href="#" type="button" class="btn btn-block btn-promary">Pievienot</a>
-            </div>
-            <div class="col-12">
-            </div class="card">
-            <div class="card-body table-responsive p-0">
-              <table class="table table-hover text-nowrap">
-                <thead>
-                  @foreach($vehicles as $vehicles)
-                  <tr>
-                    <td>{{ $vehicles->id }}</td>
-                    <td>{{ $vehicles->name }}</td>
-                    <td><a href="{{ route('Vehicle.show', $vehicles->id) }}"><i class="far fa-eye"></i></a></td>
-                    <td><a href="{{ route('Vehicle.edit', $vehicles->id) }}"><i class="fas fa-pencil-alt"></i></a></td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    @endforeach
-                  </tr>
-                </tbody>
-              </table>
+                <h2 class="mb-3">
+                    Jauna ceļojuma rediģēšana
+                </h2>
+                <form action="{{ route('Vehicle.update',  $vehicles->id) }}" method="POST" class="w-25">
+                    @csrf
+                    @method('PATCH')
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="name" placeholder="Ceļojuma veida nosaukums" value="{{ $vehicles->name }}">
+                        <span class="text-danger">@error('name'){{$message}} @enderror</span>
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Rediģēt">
+                </form>
             </div>
         </div>
-    </div>
   </section>

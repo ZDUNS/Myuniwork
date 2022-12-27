@@ -6,6 +6,9 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\CreateVehicleController;
 use App\Http\Controllers\StoreController;
+use App\Http\Controllers\ShowController;
+use App\Http\Controllers\EditController;
+use App\Http\Controllers\UpdateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +34,6 @@ Route::get('/logout', [AuthController::class, 'logout']);
 Route::get('/Vehicle' , [VehicleController::class, 'index'])->name('Vehicle.Vehicle'); //Lai pieklutu transportu skatam
 Route::get('/Create' , [CreateVehicleController::class, 'index'])->name('Vehicle.create'); //Lai pieklutu transportu skatam
 Route::post('/',[StoreController::class, 'store'])->name('Vehicle.store');
+Route::get('/{vehicles}', [ShowController::class, 'show'])->name('Vehicle.show');
+Route::get('/{vehicles}/edit', [EditController::class, 'edit'])->name('Vehicle.edit');
+Route::patch('/{vehicles}', [UpdateController::class, 'update'])->name('Vehicle.update');

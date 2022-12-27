@@ -53,28 +53,24 @@
       </div>
     </div>
   </header><!-- End Header -->
+  <div class="col-sm-6 d-flex">
+  <h1 class="m-0">{{ $vehicles->name }}</h1>
+  <a href="{{ route('Vehicle.edit', $vehicles->id) }}"><i class="fas fa-pencil-alt"></i></a> 
   <section class="content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <a href="#" type="button" class="btn btn-block btn-promary">Pievienot</a>
-            </div>
-            <div class="col-12">
             </div class="card">
             <div class="card-body table-responsive p-0">
               <table class="table table-hover text-nowrap">
-                <thead>
-                  @foreach($vehicles as $vehicles)
-                  <tr>
-                    <td>{{ $vehicles->id }}</td>
-                    <td>{{ $vehicles->name }}</td>
-                    <td><a href="{{ route('Vehicle.show', $vehicles->id) }}"><i class="far fa-eye"></i></a></td>
-                    <td><a href="{{ route('Vehicle.edit', $vehicles->id) }}"><i class="fas fa-pencil-alt"></i></a></td>
-                  </tr>
-                </thead>
                 <tbody>
                   <tr>
-                    @endforeach
+                    <td>ID</td>
+                    <td>{{ $vehicles->id }}</td>
+                  </tr>
+                  <tr>
+                    <td>Nosaukums</td>
+                    <td>{{ $vehicles->name }}</td>
                   </tr>
                 </tbody>
               </table>
