@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Places;
 
 use App\Models\Places;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class PlacesController extends Controller
@@ -14,7 +15,8 @@ class PlacesController extends Controller
      */
     public function index()
     {
-        //
+        $places = Places::all();
+        return view ('Places.Index', compact('places'));
     }
 
     /**

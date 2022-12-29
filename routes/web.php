@@ -10,7 +10,7 @@ use App\Http\Controllers\ShowController;
 use App\Http\Controllers\EditController;
 use App\Http\Controllers\UpdateController;
 use App\Http\Controllers\DeleteController;
-use App\Http\Controllers\PlacesController;
+use App\Http\Controllers\Places\PlacesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +43,7 @@ Route::patch('/{vehicles}', [UpdateController::class, 'update'])->name('Vehicle.
 
 
 
-Route::get('/Places' , [PlacesController::class, 'index'])->name('Places.index'); //Lai pieklutu valstu skatam
+Route::get('/Places/All' , [PlacesController::class, 'index'])->name('Places.Index')->middleware('isloggedin'); //Lai pieklutu valstu skatam
 Route::get('/AddNewPlace' , [PlacesController::class, 'index'])->name('Places.create'); //Lai pieklutu valstu izveidosanas skatam
 //Route::post('/',[PlacesController::class, 'store'])->name('Places.store');
 Route::get('/{places}', [PlacesController::class, 'show'])->name('Places.show');

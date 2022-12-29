@@ -19,7 +19,7 @@
 
       <div class="row justify-content-center align-items-center">
         <div class="col-xl-11 d-flex align-items-center justify-content-between">
-          <h1 class="logo"><a>Ceļojuma veidi</a></h1>
+          <h1 class="logo"><a>Ceļojumu galamērķi</a></h1>
           <nav id="navbar" class="navbar">
             <ul>
               <li><a class="nav-link scrollto active" href="#hero">Galvenais skats</a></li>
@@ -56,13 +56,13 @@
             <div class="card-body table-responsive p-0">
               <table class="table table-hover text-nowrap">
                 <thead>
-                  @foreach($vehicles as $vehicles)
+                  @foreach($places as $places)
                   <tr>
-                    <td>{{ $vehicles->name }}</td>
-                    <td><a href="{{ route('Vehicle.show', $vehicles->id) }}"><i class="far fa-eye"></i></a></td>
-                    <td><a href="{{ route('Vehicle.edit', $vehicles->id) }}" class="text success"><i class="fas fa-pencil-alt"></i></a></td>
+                    <td>{{ $places->name }}</td>
+                    <td><a href="{{ route('Places.show', $places->id) }}"><i class="far fa-eye"></i></a></td>
+                    <td><a href="{{ route('Places.edit', $places->id) }}" class="text success"><i class="fas fa-pencil-alt"></i></a></td>
                     <td>
-                      <form action="{{ route('Vehicle.delete', $vehicles->id) }}" method="POST">
+                      <form action="{{ route('Places.delete', $places->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="border-0">
