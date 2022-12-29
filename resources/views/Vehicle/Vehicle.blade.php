@@ -30,22 +30,16 @@
               <li><a class="nav-link  " href="blog.html">Ceļo droši</a></li>
               <li class="dropdown"><a href="#"><span>Ceļojumi</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                  <li><a href="#">Ceļojumu piedāvājumi</a></li>
-                  <li class="dropdown"><a href="#"><span>Valstis</span> <i class="bi bi-chevron-right"></i></a>
-                    <ul>
-                      <li><a href="#">Deep Drop Down 1</a></li>
-                      <li><a href="#">Deep Drop Down 2</a></li>
-                      <li><a href="#">Deep Drop Down 3</a></li>
-                      <li><a href="#">Deep Drop Down 4</a></li>
-                      <li><a href="#">Deep Drop Down 5</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="{{ url('createPost') }}">Izveidot diskusiju</a></li>
-                  <li><a href="{{ url('Vehicle') }}">Ceļojuma veidi</a></li>
-                  <li><a href="{{ url('Create') }}">Pievienot Ceļojuma veidu</a></li>
+                  <li><a href="{{ url('Vehicle') }}">Visi ceļojumu veidi</a></li>
+                  <li><a href="{{ url('Create') }}">Pievienot jaunu ceļojuma veidu</a></li>
                 </ul>
               </li>
-              <li><a class="nav-link scrollto" href="#contact">idk</a></li>
+              <li class="dropdown"><a href="#"><span>Galamērķi</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="{{ url('Places') }}">Visi Galamērķi</a></li>
+                      <li><a href="{{ url('AddNewPlace') }}">Pievienot jaunu galamērķi</a></li>
+                </ul>
+                <li><a href="logout">Atslēgties</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav><!-- .navbar -->
@@ -69,7 +63,16 @@
                     <td>{{ $vehicles->id }}</td>
                     <td>{{ $vehicles->name }}</td>
                     <td><a href="{{ route('Vehicle.show', $vehicles->id) }}"><i class="far fa-eye"></i></a></td>
-                    <td><a href="{{ route('Vehicle.edit', $vehicles->id) }}"><i class="fas fa-pencil-alt"></i></a></td>
+                    <td><a href="{{ route('Vehicle.edit', $vehicles->id) }}" class="text success"><i class="fas fa-pencil-alt"></i></a></td>
+                    <td>
+                      <form action="{{ route('Vehicle.delete', $vehicles->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="border-0">
+                          <i class="fas fa-trash text-danger"></i>
+                        </button>
+                      </form>
+                    </td>
                   </tr>
                 </thead>
                 <tbody>

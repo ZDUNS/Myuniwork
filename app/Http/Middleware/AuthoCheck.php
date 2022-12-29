@@ -17,7 +17,7 @@ class AuthoCheck
     public function handle(Request $request, Closure $next)
     {
         if(!Session()->has('loginid')){
-            return redirect('login')->with('fail', 'Sveicināti atpakaļ!');
+            return redirect('login')->with('fail', 'Lai piekļūtu šim skatam, pieslēdzieties sistēmai!');
         }
         return $next($request);
     }
