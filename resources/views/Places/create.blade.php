@@ -19,7 +19,7 @@
 
       <div class="row justify-content-center align-items-center">
         <div class="col-xl-11 d-flex align-items-center justify-content-between">
-          <h1 class="logo"><a>Valstis</a></h1>
+          <h1 class="logo"><a>Jaunu ceļojumu galamērķu pievienošana</a></h1>
           <nav id="navbar" class="navbar">
             <ul>
               <li><a class="nav-link scrollto active" href="#hero">Galvenais skats</a></li>
@@ -30,18 +30,16 @@
               <li><a class="nav-link  " href="blog.html">Ceļo droši</a></li>
               <li class="dropdown"><a href="#"><span>Ceļojumi</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                  <li><a href="#">Ceļojumu piedāvājumi</a></li>
-                  <li class="dropdown"><a href="#"><span>Galamērķi</span> <i class="bi bi-chevron-right"></i></a>
-                    <ul>
-                      <li><a href="{{ url('Places') }}">Visi Galamērķi</a></li>
-                      <li><a href="{{ url('AddNewPlace') }}">Pievienot jaunu galamērķi</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="{{ url('Vehicle') }}">Ceļojuma veidi</a></li>
-                  <li><a href="{{ url('Create') }}">Pievienot Ceļojuma veidu</a></li>
+                  <li><a href="{{ url('Vehicle') }}">Visi ceļojumu veidi</a></li>
+                  <li><a href="{{ url('Create') }}">Pievienot jaunu ceļojuma veidu</a></li>
                 </ul>
               </li>
-              <li><a class="nav-link scrollto" href="#contact">idk</a></li>
+              <li class="dropdown"><a href="#"><span>Galamērķi</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="{{ url('Places') }}">Visi Galamērķi</a></li>
+                      <li><a href="{{ url('AddNewPlace') }}">Pievienot jaunu galamērķi</a></li>
+                </ul>
+                <li><a href="logout">Atslēgties</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav><!-- .navbar -->
@@ -54,12 +52,12 @@
         <div class="row">
             <div class="col-12">
                 <h2 class="mb-3">
-                    Jauna ceļojuma veida pievienošana
+                    Jauna ceļojuma galamērķa pievienošana
                 </h2>
                 <form action="{{ route('Places.store') }}" method="POST" class="w-25">
                     @csrf
                     <div class="form-group">
-                        <input type="text" class="form-control" name="name" placeholder="Ceļojuma veida nosaukums">
+                        <input type="text" class="form-control" name="name" placeholder="Ceļojuma galamērķis">
                         <span class="text-danger">@error('name'){{$message}} @enderror</span>
                     </div>
                     <input type="submit" class="btn btn-primary" value="Pievienot">

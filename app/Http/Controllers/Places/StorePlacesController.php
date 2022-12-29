@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Places;
 
-use App\Http\Requests\Places\UpdatePlacesRequest;
 use App\Models\Places;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class PlacesController extends Controller
+class StorePlacesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,7 @@ class PlacesController extends Controller
      */
     public function index()
     {
-        $places = Places::all();
-        return view ('Places.Index', compact('places'));
+        //
     }
 
     /**
@@ -27,7 +25,7 @@ class PlacesController extends Controller
      */
     public function create()
     {
-        return view('Places.create');
+        //
     }
 
     /**
@@ -38,7 +36,17 @@ class PlacesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->except(['_token']);//lai nav token_id errora
+        $request->validate([
+            'name'=>'required | string |min:3|max:80 | unique:places',
+        ],
+            [
+                'name.required'=>'Lūdzu aizpildiet šo lauku!',
+                'name.unique'=>'Šāds ceļojuma veids jau eksistē!',
+
+        ]);
+        Places::firstOrCreate($data);
+        return redirect('AddNewPlace');
     }
 
     /**
@@ -47,9 +55,9 @@ class PlacesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Places $places)
+    public function show($id)
     {
-        return view('Places.show', compact('places'));
+        //
     }
 
     /**
@@ -58,9 +66,9 @@ class PlacesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Places $places)
+    public function edit($id)
     {
-        return view('Places.edit', compact('places'));
+        //
     }
 
     /**
@@ -70,11 +78,9 @@ class PlacesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePlacesRequest $request,Places $places)
+    public function update(Request $request, $id)
     {
-        $data = $request->validated();
-        $places->update($data);
-        return view('Places.show', compact('places'));
+        //
     }
 
     /**
@@ -83,10 +89,8 @@ class PlacesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Places $places)
+    public function destroy($id)
     {
-        Places::find($places);
-        $places->forceDelete();
-        return redirect()->route('Places.Index');
+        //
     }
 }
