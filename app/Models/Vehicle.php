@@ -13,4 +13,6 @@ class Vehicle extends Model
 
     protected $table = 'vehicle';
     protected $guarded = false; //lai tabula mainit
+    //public $timestamps=false;
+    protected $primaryKey = 'id';
 }
