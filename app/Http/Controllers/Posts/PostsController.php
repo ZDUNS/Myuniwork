@@ -58,14 +58,14 @@ class PostsController extends Controller
         ],
             [
                 'title.required'=>'Lūdzu aizpildiet šo lauku!',
-                'title.unique'=>'Šāds ceļojuma veids jau eksistē!',
+                'title.unique'=>'Diskusija ar šādu nosaukumu jau eksistē, lūdzu izvēlieties citu nosaukumu!',
                 'description.required'=>'Lūdzu aizpildiet šo lauku!',
                 'preview_image.required'=>'Lūdzu augšupielādējiet pirmskata attēlu',
                 'image.required'=>'Lūdzu augšupielādējiet attēlu',
 
         ]);
-        $data['preview_image'] = Storage::put('/images', $data['preview_image']);
-        $data['image'] = Storage::put('/images', $data['image']);
+        $data['preview_image'] = Storage::disk('public')->put('/images', $data['preview_image']);
+        $data['image'] = Storage::disk('public')->put('/images', $data['image']);
        // $previewImage = $data['preview_image'];
         //$mainImage = $data['image'];
         //$previewImagePath = Storage::put('/image', $previewImage);
@@ -91,9 +91,11 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $posts)
     {
-        //
+        $vehicle= Vehicle::all();
+        $places= Places::all();
+        return view('Posts.edit', compact('posts', 'vehicle', 'places'));
     }
 
     /**
@@ -103,9 +105,12 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePostRequest $request,Post $posts)
+    public function update(UpdatePostRequest $request, Post $posts)
     {
         $data = $request->validated();
+        
+       //$data['preview_image'] = Storage::disk('public')->put('/images', $data['preview_image']);
+        //$data['image'] = Storage::disk('public')->put('/images', $data['image']);
         $posts->update($data);
         return view('Posts.show', compact('posts'));
     }
@@ -116,8 +121,11 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $posts)
     {
-        //
+        Post::find($posts);
+        $posts->forceDelete();
+        //$vehicles->delete();
+        return redirect()->route('Posts.Index');
     }
 }

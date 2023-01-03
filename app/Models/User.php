@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Model
 {
-    public function posts() {
-        return $this->hasMany('App\Models\Post');
-    }
+    protected $table = 'users';
+    protected $guarded = false; //lai tabula mainit
+    protected $primaryKey = 'user_id';
 }

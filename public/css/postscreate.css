@@ -1,0 +1,315 @@
+body {
+	background: rgba(0, 0, 0, 0.5) url("/img/wallpapersden.com_cloudy-mountains_3840x2160.jpg");
+	color: #666666;
+	font-family: "Open Sans", sans-serif;
+	background-size:cover;
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+  }
+  
+  a {
+	color: #a11bae;
+	transition: 0.5s;
+	text-decoration: none;
+  }
+  
+  a:hover,
+  a:active,
+  a:focus {
+	color: #a11bae;
+	outline: none;
+	text-decoration: none;
+  }
+  
+  p {
+	padding: 0;
+	margin: 0 0 30px 0;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	margin: 0 0 20px 0;
+	padding: 0;
+  }
+
+  /* Prelaoder */
+  #preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 9999;
+	overflow: hidden;
+	background: #fff;
+  }
+  
+  #preloader:before {
+	content: "";
+	position: fixed;
+	top: calc(50% - 30px);
+	left: calc(50% - 30px);
+	border: 6px solid #f2f2f2;
+	border-top: 6px solid #a11bae;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	-webkit-animation: animate-preloader 1s linear infinite;
+	animation: animate-preloader 1s linear infinite;
+  }
+  
+  @-webkit-keyframes animate-preloader {
+	0% {
+	  transform: rotate(0deg);
+	}
+  
+	100% {
+	  transform: rotate(360deg);
+	}
+  }
+  
+  @keyframes animate-preloader {
+	0% {
+	  transform: rotate(0deg);
+	}
+  
+	100% {
+	  transform: rotate(360deg);
+	}
+  }
+
+  
+  /*--------------------------------------------------------------
+  # Header
+  --------------------------------------------------------------*/
+  #header {
+	transition: all 0.5s;
+	z-index: 997;
+	background: rgba(0, 0, 0, 0.9);
+	height: 80px;
+  }
+  
+  #header.header-transparent {
+	background: transparent;
+  }
+  
+  #header.header-scrolled {
+	background: rgba(0, 0, 0, 0.9);
+	height: 60px;
+  }
+  
+  #header .logo {
+	font-size: 34px;
+	margin: 0;
+	padding: 0;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 700;
+	letter-spacing: 3px;
+	padding-left: 10px;
+	border-left: 4px solid #a11bae;
+  }
+  
+  #header .logo a {
+	color: #fff;
+  }
+  
+  #header .logo img {
+	max-height: 40px;
+  }
+  
+  @media (max-width: 992px) {
+	#header .logo {
+	  font-size: 28px;
+	}
+  }
+
+  
+  /*--------------------------------------------------------------
+  # Navigation Menu
+  --------------------------------------------------------------*/
+  .navbar {
+	padding: 0;
+  }
+  
+  .navbar ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	list-style: none;
+	align-items: center;
+  }
+  
+  .navbar li {
+	position: relative;
+  }
+  
+  .navbar a,
+  .navbar a:focus {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 0 10px 30px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 13px;
+	font-weight: 600;
+	color: #fff;
+	white-space: nowrap;
+	text-transform: uppercase;
+	transition: 0.3s;
+  }
+  
+  .navbar a i,
+  .navbar a:focus i {
+	font-size: 12px;
+	line-height: 0;
+	margin-left: 5px;
+  }
+  
+  .navbar a:hover,
+  .navbar .active,
+  .navbar .active:focus,
+  .navbar li:hover>a {
+	color: #a11bae;
+  }
+  
+  .navbar .dropdown ul {
+	display: block;
+	position: absolute;
+	left: 14px;
+	top: calc(100% + 30px);
+	margin: 0;
+	padding: 10px 0;
+	z-index: 99;
+	opacity: 0;
+	visibility: hidden;
+	background: #fff;
+	box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+	transition: 0.3s;
+  }
+  
+  .navbar .dropdown ul li {
+	min-width: 200px;
+  }
+  
+  .navbar .dropdown ul a {
+	padding: 10px 20px;
+	text-transform: none;
+	color: #666666;
+  }
+  
+  .navbar .dropdown ul a i {
+	font-size: 12px;
+  }
+  
+  .navbar .dropdown ul a:hover,
+  .navbar .dropdown ul .active:hover,
+  .navbar .dropdown ul li:hover>a {
+	color: #a11bae;
+  }
+  
+  .navbar .dropdown:hover>ul {
+	opacity: 1;
+	top: 100%;
+	visibility: visible;
+  }
+  
+  .navbar .dropdown .dropdown ul {
+	top: 0;
+	left: calc(100% - 30px);
+	visibility: hidden;
+  }
+  
+  .navbar .dropdown .dropdown:hover>ul {
+	opacity: 1;
+	top: 0;
+	left: 100%;
+	visibility: visible;
+  }
+  
+  @media (max-width: 1366px) {
+	.navbar .dropdown .dropdown ul {
+	  left: -90%;
+	}
+  
+	.navbar .dropdown .dropdown:hover>ul {
+	  left: -100%;
+	}
+  }
+
+.main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+    text-align: center;
+    padding: 60px 32px;
+    width: 679px;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
+  }
+
+  .main header {
+    color: #a11bae;
+    font-size: 33px;
+    font-weight: 600;
+    margin: 0 0 35px 0; 
+  }
+  .field {
+    position: relative;
+    height: 45px;
+    width: 100%;
+    display: flex;
+    background: rgba(255, 255, 255, 0.94);
+  }
+  .field span {
+    color: #222;
+    width: 40px;
+    line-height: 45px;
+  }
+.field input {
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #222;
+    font-size: 16px; 
+  }
+  .main label {
+    color: #a11bae;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 35px 0; 
+    clear: both;
+    display: inline-block;
+    overflow: hidden;
+  }
+  .main select {
+  width: 42.5rem;
+  height: 1.5rem;
+  border: 1px solid #727272;
+  border-radius: 3px;
+  display: flex;
+  }
+  .main textarea{
+    float: left;
+    width: 100%;
+    margin-top: 6px;
+    resize: vertical;
+    display: flex;
+  }
+  .foredit {
+    height: 100px;
+    width: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+

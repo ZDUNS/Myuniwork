@@ -24,7 +24,13 @@ class UpdatePostRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'=>'required | string |min:3|max:100 | unique:title',
+            
+            'title'=>'required | string |min:3|max:80',
+            'description'=>'required | string |min:3|max:255 ',
+            'preview_image'=>'nullable| file',
+            'image'=>'nullable | file',
+            'vehicle_id'=>'required | integer | exists:vehicle,id',
+            'place_id'=>'required | integer | exists:places,id',
         ];
     }
 }
