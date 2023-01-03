@@ -55,7 +55,6 @@
                 <form action="{{ route('Posts.update',  $posts->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH')
-                    @csrf
                     <div class="field">
                       <input type="text" name="title" placeholder="   Diskusijas nosaukums" value="{{ $posts->title }}">
                     </div>

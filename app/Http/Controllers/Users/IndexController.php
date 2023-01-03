@@ -58,7 +58,7 @@ class IndexController extends Controller
             'email.unique'=>'Lietotājs ar šādu epastu jau eksistē!',
 
        ]);
-       $data['password'] = Hash::make($data['password']);
+       //$data['password'] = Hash::make($data['password']);
        User::firstOrCreate(['username'=>$data['username']],['email'=>$data['email']], $data);
        //return redirect('AddNewUser');
     }
@@ -82,7 +82,7 @@ class IndexController extends Controller
      */
     public function edit(User $users)
     { 
-        return view('User.edit', compact('users'));
+        return view('User.edit', compact('users')); 
     }
 
     /**
@@ -92,7 +92,7 @@ class IndexController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateUserRequest $request,User $users)
+    public function update(UpdateUserRequest $request, User $users)
     {
         //$users = auth()->user();
         $data = $request->validated();

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Hash;
 use Session;
 
@@ -69,7 +70,8 @@ class AuthController extends Controller
         $users = User::where('username', '=', $request->username)->first();
         if ($users) {
             if(Hash::check($request->password,$users->password)) {
-                $request->session()->put('loginid', $users->user_id);
+                $userId = Auth::login($users);
+                $request->session()->put('loginid', $users->id);
                 return redirect ('welcome');
             }
             else

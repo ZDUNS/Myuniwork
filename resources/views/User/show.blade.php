@@ -60,7 +60,7 @@
                 <tbody>
                   <tr>
                     <td>ID</td>
-                    <td>{{ $users->user_id }}</td>
+                    <td>{{ $users->id }}</td>
                   </tr>
                   <tr>
                     <td>Nosaukums</td>

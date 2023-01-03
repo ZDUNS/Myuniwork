@@ -14,7 +14,6 @@ use App\Http\Controllers\Places\PlacesController;
 use App\Http\Controllers\Places\StorePlacesController;
 use App\Http\Controllers\Posts\PostsController;
 use App\Http\Controllers\Users\IndexController;
-use App\Http\Policies\UserPolicy;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,6 +65,7 @@ Route::patch('/{places}/update/this', [PlacesController::class, 'update'])->name
 
 
 Route::get('/user', [IndexController::class, 'index'])->name('User.Index')->middleware('isloggedin');
-Route::get('/{users}/editing/my/profile', [IndexController::class, 'edit'])->name('User.edit')->middleware('isloggedin');//->middleware('can:update,user');
+//Route::get('/{users}/editing/my/profile', [IndexController::class, 'edit'])->name('User.edit')->middleware('isloggedin');
+Route::get('/{users}/editing/my/profile', [IndexController::class, 'edit'])->name('User.edit')->middleware('isloggedin', 'CheckUserId');
 Route::patch('/{users}/update/my/profile', [IndexController::class, 'update'])->name('User.update')->middleware('isloggedin');
 Route::get('/{users}/show', [IndexController::class, 'show'])->name('User.show')->middleware('isloggedin');

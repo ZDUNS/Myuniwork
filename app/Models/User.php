@@ -4,12 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Contracts\Auth\Authenticatable;
 
 
-class User extends Model
+class User extends Model implements Authenticatable
 {
+    use \Illuminate\Auth\Authenticatable;
     protected $table = 'users';
     protected $guarded = false; //lai tabula mainit
-    protected $primaryKey = 'user_id';
+    protected $primaryKey = 'id';
 }

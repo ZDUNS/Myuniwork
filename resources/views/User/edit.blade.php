@@ -52,10 +52,9 @@
         <div class="row">
             <div class="main">
                 <header>Profila rediģēšana</header>
-                <form action="{{ route('User.update',  $users->user_id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('User.update',  $users->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH')
-                    @csrf
                     <div class="field">
                       <input type="text" placeholder="   Ievadiet lietotāja vārdu" name="username" value="{{ $users->username}}">
                     </div>
