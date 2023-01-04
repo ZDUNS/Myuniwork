@@ -4,6 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Hash;
+use Session;
 
 class AdminMiddleware
 {
@@ -15,8 +18,9 @@ class AdminMiddleware
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next)
+
     {
-        if (!(Auth::check() && Auth::user()->isAdmin()))
+        if (!(auth::check() && auth::user()->isAdmin()))
         {
             return redirect('welcome')->withErrors('Piekļuve administratora funkcijām ir aizliegta!');
         }
