@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class PostRating extends Model
 {
     use HasFactory;
+    protected $table = 'post_rating';
+    protected $guarded = false;
 }

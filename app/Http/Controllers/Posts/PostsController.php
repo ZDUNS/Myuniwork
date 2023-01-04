@@ -11,6 +11,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\VehicleController;
 use Illuminate\Http\Request;
 use App\Http\Requests\Posts\UpdatePostRequest;
+use App\Models\User;
+use App\Models\Answer;
 use Illuminate\Support\Facades\Storage;
 
 class PostsController extends Controller
@@ -20,10 +22,22 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::all();
-        return view ('Posts.Index', compact('posts'));
+        $place_id=$request->input('place_id');
+        $vehicle_id=$request->input('vehicle_id');
+         $posts = Post::query();
+        if ($place_id){
+           $posts->where('place_id', $place_id);
+        }
+        if ($vehicle_id){
+            $posts->where('vehicle_id', $vehicle_id);
+        }
+        $places= Places::all();
+        $vehicles= Vehicle::all();
+        $posts=$posts->get();
+       
+        return view ('Posts.Index', compact('posts', 'vehicles', 'places', 'place_id', 'vehicle_id'));
     }
 
     /**
@@ -66,6 +80,7 @@ class PostsController extends Controller
         ]);
         $data['preview_image'] = Storage::disk('public')->put('/images', $data['preview_image']);
         $data['image'] = Storage::disk('public')->put('/images', $data['image']);
+        $data['user_id'] = $request->session()->get('loginid');
        // $previewImage = $data['preview_image'];
         //$mainImage = $data['image'];
         //$previewImagePath = Storage::put('/image', $previewImage);
@@ -82,7 +97,13 @@ class PostsController extends Controller
      */
     public function show(Post $posts)
     {
-        return view('Posts.show', compact('posts'));
+        $answers =Answer::where('post_id', $posts->id)->get();
+        $user = $posts->user()->first(); //userim izsaucam komandu no post modela, kurs ielades pec id kolonnaa
+        $vehicle = $posts->vehicle()->first();
+        $place = $posts->place()->first();
+        //var_dump($vehicle);
+        //die();
+        return view('Posts.show',  compact('posts', 'user', 'place', 'vehicle', 'answers'));//['posts'=>$posts, 'user'=>$user]);
     }
 
     /**
@@ -108,11 +129,14 @@ class PostsController extends Controller
     public function update(UpdatePostRequest $request, Post $posts)
     {
         $data = $request->validated();
-        
-       //$data['preview_image'] = Storage::disk('public')->put('/images', $data['preview_image']);
-        //$data['image'] = Storage::disk('public')->put('/images', $data['image']);
+        if (isset($data['preview_image'])) {
+            $data['preview_image'] = Storage::disk('public')->put('/images', $data['preview_image']);
+        }
+        if (isset($data['image'])) {
+             $data['image'] = Storage::disk('public')->put('/images', $data['image']);
+        }
         $posts->update($data);
-        return view('Posts.show', compact('posts'));
+        return redirect()->route('Posts.show', compact('posts'));//, compact('posts'));
     }
 
     /**

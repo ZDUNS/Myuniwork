@@ -14,6 +14,7 @@ use App\Http\Controllers\Places\PlacesController;
 use App\Http\Controllers\Places\StorePlacesController;
 use App\Http\Controllers\Posts\PostsController;
 use App\Http\Controllers\Users\IndexController;
+use App\Http\Controllers\Answer\AnswerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,7 @@ use App\Http\Controllers\Users\IndexController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('isloggedin');
 
 Route::get('/login' , [AuthController::class, 'login']);
 Route::get('/registration' , [AuthController::class, 'registration']);
@@ -48,8 +49,8 @@ Route::get('/AddNewPost' , [PostsController::class, 'create'])->name('Posts.crea
 Route::post('/storepost',[PostsController::class, 'store'])->name('Posts.store')->middleware('isloggedin');
 Route::post('/',[StoreController::class, 'store'])->name('Vehicle.store')->middleware('isloggedin');
 Route::get('/{posts}', [PostsController::class, 'show'])->name('Posts.show')->middleware('isloggedin');
-Route::get('/{posts}/editing', [PostsController::class, 'edit'])->name('Posts.edit')->middleware('isloggedin');
-Route::delete('/{posts}/delete', [PostsController::class, 'destroy'])->name('Posts.delete')->middleware('isloggedin');
+Route::get('/{posts}/editing', [PostsController::class, 'edit'])->name('Posts.edit')->middleware('isloggedin' , 'CheckpostOwner');
+Route::delete('/{posts}/delete', [PostsController::class, 'destroy'])->name('Posts.delete')->middleware('isloggedin', 'CheckpostOwner');
 Route::patch('/{posts}/update', [PostsController::class, 'update'])->name('Posts.update')->middleware('isloggedin');
 
 Route::get('/{vehicles}/show', [ShowController::class, 'show'])->name('Vehicle.show')->middleware('isloggedin');
@@ -69,3 +70,5 @@ Route::get('/user', [IndexController::class, 'index'])->name('User.Index')->midd
 Route::get('/{users}/editing/my/profile', [IndexController::class, 'edit'])->name('User.edit')->middleware('isloggedin', 'CheckUserId');
 Route::patch('/{users}/update/my/profile', [IndexController::class, 'update'])->name('User.update')->middleware('isloggedin');
 Route::get('/{users}/show', [IndexController::class, 'show'])->name('User.show')->middleware('isloggedin');
+
+Route::post('/AddAnswer',[AnswerController::class, 'store'])->name('Answer.store')->middleware('isloggedin');

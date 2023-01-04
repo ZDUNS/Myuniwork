@@ -14,6 +14,7 @@
                   <tr>
                     <td>{{ $places->name }}</td>
                     <td><a href="{{ route('Places.show', $places->id) }}"><i class="far fa-eye"></i></a></td>
+                    @if ( !Auth::guest() && Auth::user()->isAdmin() )
                     <td><a href="{{ route('Places.edit', $places->id) }}" class="text success"><i class="fas fa-pencil-alt"></i></a></td>
                     <td>
                       <form action="{{ route('Places.delete', $places->id) }}" method="POST">
@@ -21,6 +22,7 @@
                         @method('DELETE')
                         <button type="submit" class="border-0">
                           <i class="fas fa-trash text-danger"></i>
+                          @endif
                         </button>
                       </form>
                     </td>

@@ -19,10 +19,11 @@ return new class extends Migration
             $table->unsignedInteger('post_id')->references('id')->on('posts');
             //$table->integer('discussion_id')->unsigned();
             //$table->foreign('discussion_id')->references('id')->on('discussions');
-            $table->unsignedInteger('user_id')->references('user_id')->on('users');
+            $table->unsignedInteger('user_id')->references('id')->on('users');
             //$table->integer('user_id')->unsigned();
             //$table->foreign('user_id')->references('id')->on('users');
             $table->text('description');
+
         });
     }
 

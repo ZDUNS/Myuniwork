@@ -30,13 +30,17 @@
               <li class="dropdown"><a href="#"><span>Ceļojumu veidi</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                   <li><a href="{{ url('Vehicle') }}">Visi ceļojumu veidi</a></li>
+                  @if ( !Auth::guest() && Auth::user()->isAdmin() )
                   <li><a href="{{ url('Create') }}">Pievienot jaunu ceļojuma veidu</a></li>
+                  @endif
                 </ul>
               </li>
               <li class="dropdown"><a href="#"><span>Galamērķi</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                   <li><a href="{{ url('Places') }}">Visi Galamērķi</a></li>
+                  @if ( !Auth::guest() && Auth::user()->isAdmin() )
                       <li><a href="{{ url('AddNewPlace') }}">Pievienot jaunu galamērķi</a></li>
+                      @endif
                 </ul>
               </li>
                 <li class="dropdown"><a href="#"><span>Diskusijas</span> <i class="bi bi-chevron-down"></i></a>

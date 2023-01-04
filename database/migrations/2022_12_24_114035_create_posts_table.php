@@ -19,7 +19,7 @@ return new class extends Migration
             //$table->integer('user_id');
             $table->unsignedInteger('place_id')->references('id')->on('places');
             $table->unsignedInteger('vehicle_id')->references('id')->on('vehicle');
-           // $table->unsignedInteger('user_id')->references('user_id')->on('users');
+            $table->unsignedInteger('user_id')->references('id')->on('users');
             $table->string('title');
             $table->text('description');
            // $table->integer('rating');

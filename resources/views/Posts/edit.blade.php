@@ -47,6 +47,7 @@
                             {{ $vehicles->id == $posts->vehicle_id ? 'selected': ''}}
                             >{{ $vehicles->name }}</option>
                           @endforeach
+                        </select>
               </div>
             <div class="input-group-append">
             </div>
