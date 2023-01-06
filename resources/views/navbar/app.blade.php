@@ -49,8 +49,12 @@
                         <li><a href="{{ url('AddNewPost') }}">Pievienot jaunu diskusiju</a></li>
                   </ul>
                 </li>
-                <li><a href="logout">Atslēgties</a></li>
-            </ul>
+                <li class="dropdown"><a href="#"><span>Mans profils</span> <i class="bi bi-chevron-down"></i></a>
+                  <ul>
+                    <li><a href="#">Rediģēt manu profilu</a></li>
+                    <li><a href="logout">Iziet</a></li>
+                  </ul>
+                </li>
             <i class="bi bi-list mobile-nav-toggle"></i>
           </nav><!-- .navbar -->
         </div>

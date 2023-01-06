@@ -36,15 +36,17 @@ class StorePlacesController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->except(['_token']);//lai nav token_id errora
-        $request->validate([
-            'name'=>'required | string |min:3|max:80 | unique:places',
-        ],
+        $data = $request->except(['_token']); //lai nav token_id errora
+        $request->validate(
             [
-                'name.required'=>'Lūdzu aizpildiet šo lauku!',
-                'name.unique'=>'Šāds ceļojuma veids jau eksistē!',
+                'name' => 'required | string |min:3|max:80 | unique:places',
+            ],
+            [
+                'name.required' => 'Lūdzu aizpildiet šo lauku!',
+                'name.unique' => 'Šāds ceļojuma veids jau eksistē!',
 
-        ]);
+            ]
+        );
         Places::firstOrCreate($data);
         return redirect('AddNewPlace');
     }

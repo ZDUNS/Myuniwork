@@ -17,7 +17,7 @@ class PlacesController extends Controller
     public function index()
     {
         $places = Places::all();
-        return view ('Places.Index', compact('places'));
+        return view('Places.Index', compact('places'));
     }
 
     /**
@@ -70,7 +70,7 @@ class PlacesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePlacesRequest $request,Places $places)
+    public function update(UpdatePlacesRequest $request, Places $places)
     {
         $data = $request->validated();
         $places->update($data);

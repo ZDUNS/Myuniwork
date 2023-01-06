@@ -45,6 +45,8 @@ class StoreController extends Controller
             [
                 'name.required'=>'Lūdzu aizpildiet šo lauku!',
                 'name.unique'=>'Šāds ceļojuma veids jau eksistē!',
+                'name.min'=>'Ceļojuma veida nosaukumam jāsatur vismaz 3 simboli!',
+                'name.max'=>'Ceļojuma veida nosaukumam jāsatur ne vairāk par 100 simboliem!',
 
         ]);
         Vehicle::firstOrCreate($data);

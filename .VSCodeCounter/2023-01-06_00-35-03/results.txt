@@ -1,0 +1,213 @@
+Date : 2023-01-06 00:35:03
+Directory : c:\xampp\htdocs\atrodicelabiedru
+Total : 131 files,  12027 codes, 1916 comments, 891 blanks, all 14834 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          3 |      7,918 |          0 |          3 |      7,921 |
+| PHP        |        115 |      3,160 |      1,865 |        739 |      5,764 |
+| CSS        |          6 |        812 |         24 |        111 |        947 |
+| JavaScript |          5 |         63 |         25 |         15 |        103 |
+| Markdown   |          1 |         45 |          0 |         22 |         67 |
+| XML        |          1 |         29 |          2 |          1 |         32 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                    | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                       |        131 |     12,027 |      1,916 |        891 |     14,834 |
+| . (Files)                                                                                                               |          6 |      8,002 |          2 |         28 |      8,032 |
+| app                                                                                                                     |         50 |      1,126 |        777 |        311 |      2,214 |
+| app (Files)                                                                                                             |          2 |         28 |         16 |         13 |         57 |
+| app\Console                                                                                                             |          1 |         15 |         12 |          6 |         33 |
+| app\Exceptions                                                                                                          |          1 |         21 |         23 |          7 |         51 |
+| app\Http                                                                                                                |         33 |        873 |        662 |        214 |      1,749 |
+| app\Http (Files)                                                                                                        |          1 |         44 |         21 |          7 |         72 |
+| app\Http\Controllers                                                                                                    |         15 |        580 |        499 |        128 |      1,207 |
+| app\Http\Controllers (Files)                                                                                            |         10 |        320 |        306 |         77 |        703 |
+| app\Http\Controllers\Answer                                                                                             |          1 |         27 |          6 |          6 |         39 |
+| app\Http\Controllers\Places                                                                                             |          2 |         80 |         89 |         21 |        190 |
+| app\Http\Controllers\Posts                                                                                              |          1 |         96 |         50 |         12 |        158 |
+| app\Http\Controllers\Users                                                                                              |          1 |         57 |         48 |         12 |        117 |
+| app\Http\Middleware                                                                                                     |         13 |        170 |        101 |         57 |        328 |
+| app\Http\Requests                                                                                                       |          4 |         79 |         41 |         22 |        142 |
+| app\Http\Requests (Files)                                                                                               |          1 |         16 |         10 |          5 |         31 |
+| app\Http\Requests\Places                                                                                                |          1 |         16 |         10 |          5 |         31 |
+| app\Http\Requests\Posts                                                                                                 |          1 |         21 |         10 |          6 |         37 |
+| app\Http\Requests\Users                                                                                                 |          1 |         26 |         11 |          6 |         43 |
+| app\Models                                                                                                              |          8 |        104 |          1 |         41 |        146 |
+| app\Providers                                                                                                           |          5 |         85 |         63 |         30 |        178 |
+| bootstrap                                                                                                               |          1 |         17 |         30 |          9 |         56 |
+| config                                                                                                                  |         15 |        533 |        733 |        239 |      1,505 |
+| database                                                                                                                |         17 |        324 |        178 |         71 |        573 |
+| database\factories                                                                                                      |          1 |         23 |         13 |          5 |         41 |
+| database\migrations                                                                                                     |         13 |        265 |        144 |         53 |        462 |
+| database\seeders                                                                                                        |          3 |         36 |         21 |         13 |         70 |
+| lang                                                                                                                    |          4 |        159 |         60 |         24 |        243 |
+| lang\en                                                                                                                 |          4 |        159 |         60 |         24 |        243 |
+| public                                                                                                                  |          5 |        825 |         52 |        122 |        999 |
+| public (Files)                                                                                                          |          1 |         14 |         30 |         12 |         56 |
+| public\css                                                                                                              |          4 |        811 |         22 |        110 |        943 |
+| resources                                                                                                               |         23 |        925 |         25 |         43 |        993 |
+| resources\css                                                                                                           |          1 |          0 |          0 |          1 |          1 |
+| resources\js                                                                                                            |          3 |         47 |         25 |         12 |         84 |
+| resources\views                                                                                                         |         19 |        878 |          0 |         30 |        908 |
+| resources\views (Files)                                                                                                 |          1 |         12 |          0 |          2 |         14 |
+| resources\views\Places                                                                                                  |          4 |        128 |          0 |          5 |        133 |
+| resources\views\Posts                                                                                                   |          4 |        246 |          0 |          5 |        251 |
+| resources\views\User                                                                                                    |          3 |        158 |          0 |          4 |        162 |
+| resources\views\Vehicle                                                                                                 |          4 |        127 |          0 |          4 |        131 |
+| resources\views\auth                                                                                                    |          2 |        145 |          0 |          8 |        153 |
+| resources\views\navbar                                                                                                  |          1 |         62 |          0 |          2 |         64 |
+| routes                                                                                                                  |          4 |         69 |         41 |         24 |        134 |
+| tests                                                                                                                   |          4 |         40 |         16 |         19 |         75 |
+| tests (Files)                                                                                                           |          2 |         19 |          5 |         10 |         34 |
+| tests\Feature                                                                                                           |          1 |         11 |          6 |          5 |         22 |
+| tests\Unit                                                                                                              |          1 |         10 |          5 |          4 |         19 |
+| vendor                                                                                                                  |          2 |          7 |          2 |          1 |         10 |
+| vendor\spatie                                                                                                           |          2 |          7 |          2 |          1 |         10 |
+| vendor\spatie\ignition                                                                                                  |          2 |          7 |          2 |          1 |         10 |
+| vendor\spatie\ignition\resources                                                                                        |          2 |          7 |          2 |          1 |         10 |
+| vendor\spatie\ignition\resources\compiled                                                                               |          2 |          7 |          2 |          1 |         10 |
++-------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                                | language   | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\xampp\htdocs\atrodicelabiedru\README.md                                                                              | Markdown   |         45 |          0 |         22 |         67 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Console\Kernel.php                                                                 | PHP        |         15 |         12 |          6 |         33 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Exceptions\Handler.php                                                             | PHP        |         21 |         23 |          7 |         51 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Controllers\AdminController.php                                               | PHP        |         17 |         12 |          5 |         34 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Controllers\Answer\AnswerController.php                                       | PHP        |         27 |          6 |          6 |         39 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Controllers\AuthController.php                                                | PHP        |         94 |          1 |          6 |        101 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Controllers\Controller.php                                                    | PHP        |         10 |          0 |          4 |         14 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Controllers\CreateVehicleController.php                                       | PHP        |         28 |         47 |         10 |         85 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Controllers\DeleteController.php                                              | PHP        |         31 |         48 |         10 |         89 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Controllers\EditController.php                                                | PHP        |         29 |         47 |         10 |         86 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Controllers\Places\PlacesController.php                                       | PHP        |         41 |         42 |         10 |         93 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Controllers\Places\StorePlacesController.php                                  | PHP        |         39 |         47 |         11 |         97 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Controllers\Posts\PostsController.php                                         | PHP        |         96 |         50 |         12 |        158 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Controllers\ShowController.php                                                | PHP        |         29 |         47 |         10 |         86 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Controllers\StoreController.php                                               | PHP        |         38 |         52 |          9 |         99 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Controllers\UpdateController.php                                              | PHP        |         32 |         47 |          9 |         88 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Controllers\Users\IndexController.php                                         | PHP        |         57 |         48 |         12 |        117 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Controllers\VehicleController.php                                             | PHP        |         12 |          5 |          4 |         21 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Kernel.php                                                                    | PHP        |         44 |         21 |          7 |         72 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Middleware\AdminMiddleware.php                                                | PHP        |         17 |          7 |          5 |         29 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Middleware\Authenticate.php                                                   | PHP        |         12 |          6 |          4 |         22 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Middleware\AuthoCheck.php                                                     | PHP        |         14 |          7 |          4 |         25 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Middleware\CheckUserIdMiddleware.php                                          | PHP        |         16 |         12 |          5 |         33 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Middleware\CheckpostOwnerMiddleware.php                                       | PHP        |         23 |         12 |          4 |         39 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Middleware\EncryptCookies.php                                                 | PHP        |          8 |          6 |          4 |         18 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Middleware\PreventRequestsDuringMaintenance.php                               | PHP        |          8 |          6 |          4 |         18 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Middleware\RedirectIfAuthenticated.php                                        | PHP        |         19 |          8 |          6 |         33 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Middleware\TrimStrings.php                                                    | PHP        |         11 |          5 |          4 |         20 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Middleware\TrustHosts.php                                                     | PHP        |         12 |          5 |          4 |         21 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Middleware\TrustProxies.php                                                   | PHP        |         14 |         10 |          5 |         29 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Middleware\ValidateSignature.php                                              | PHP        |          8 |         11 |          4 |         23 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Middleware\VerifyCsrfToken.php                                                | PHP        |          8 |          6 |          4 |         18 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Requests\Places\UpdatePlacesRequest.php                                       | PHP        |         16 |         10 |          5 |         31 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Requests\Posts\UpdatePostRequest.php                                          | PHP        |         21 |         10 |          6 |         37 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Requests\UpdateRequest.php                                                    | PHP        |         16 |         10 |          5 |         31 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Http\Requests\Users\UpdateUserRequest.php                                          | PHP        |         26 |         11 |          6 |         43 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Models\Answer.php                                                                  | PHP        |         15 |          0 |          6 |         21 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Models\Keyword.php                                                                 | PHP        |          8 |          0 |          4 |         12 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Models\Places.php                                                                  | PHP        |         10 |          0 |          5 |         15 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Models\Post.php                                                                    | PHP        |         24 |          0 |          7 |         31 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Models\PostKeyword.php                                                             | PHP        |          8 |          0 |          4 |         12 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Models\PostRating.php                                                              | PHP        |         10 |          0 |          4 |         14 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Models\User.php                                                                    | PHP        |         16 |          0 |          6 |         22 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Models\Vehicle.php                                                                 | PHP        |         13 |          1 |          5 |         19 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Providers\AppServiceProvider.php                                                   | PHP        |         12 |         12 |          5 |         29 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Providers\AuthServiceProvider.php                                                  | PHP        |         12 |         13 |          6 |         31 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Providers\BroadcastServiceProvider.php                                             | PHP        |         12 |          5 |          5 |         22 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Providers\EventServiceProvider.php                                                 | PHP        |         21 |         16 |          6 |         43 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Providers\RouteServiceProvider.php                                                 | PHP        |         28 |         17 |          8 |         53 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Users.php                                                                          | PHP        |         19 |         16 |          9 |         44 |
+| c:\xampp\htdocs\atrodicelabiedru\app\Vehicle.php                                                                        | PHP        |          9 |          0 |          4 |         13 |
+| c:\xampp\htdocs\atrodicelabiedru\bootstrap\app.php                                                                      | PHP        |         17 |         30 |          9 |         56 |
+| c:\xampp\htdocs\atrodicelabiedru\composer.json                                                                          | JSON       |         65 |          0 |          1 |         66 |
+| c:\xampp\htdocs\atrodicelabiedru\composer.lock                                                                          | JSON       |      7,839 |          0 |          1 |      7,840 |
+| c:\xampp\htdocs\atrodicelabiedru\config\app.php                                                                         | PHP        |         48 |        134 |         34 |        216 |
+| c:\xampp\htdocs\atrodicelabiedru\config\auth.php                                                                        | PHP        |         28 |         70 |         14 |        112 |
+| c:\xampp\htdocs\atrodicelabiedru\config\broadcasting.php                                                                | PHP        |         35 |         23 |         13 |         71 |
+| c:\xampp\htdocs\atrodicelabiedru\config\cache.php                                                                       | PHP        |         58 |         34 |         19 |        111 |
+| c:\xampp\htdocs\atrodicelabiedru\config\cors.php                                                                        | PHP        |          3 |         29 |          3 |         35 |
+| c:\xampp\htdocs\atrodicelabiedru\config\database.php                                                                    | PHP        |         83 |         47 |         22 |        152 |
+| c:\xampp\htdocs\atrodicelabiedru\config\filesystems.php                                                                 | PHP        |         32 |         32 |         13 |         77 |
+| c:\xampp\htdocs\atrodicelabiedru\config\hashing.php                                                                     | PHP        |         12 |         32 |          9 |         53 |
+| c:\xampp\htdocs\atrodicelabiedru\config\logging.php                                                                     | PHP        |         70 |         34 |         19 |        123 |
+| c:\xampp\htdocs\atrodicelabiedru\config\mail.php                                                                        | PHP        |         53 |         47 |         19 |        119 |
+| c:\xampp\htdocs\atrodicelabiedru\config\queue.php                                                                       | PHP        |         47 |         32 |         15 |         94 |
+| c:\xampp\htdocs\atrodicelabiedru\config\sanctum.php                                                                     | PHP        |         15 |         41 |         12 |         68 |
+| c:\xampp\htdocs\atrodicelabiedru\config\services.php                                                                    | PHP        |         17 |         11 |          7 |         35 |
+| c:\xampp\htdocs\atrodicelabiedru\config\session.php                                                                     | PHP        |         22 |        147 |         33 |        202 |
+| c:\xampp\htdocs\atrodicelabiedru\config\view.php                                                                        | PHP        |         10 |         20 |          7 |         37 |
+| c:\xampp\htdocs\atrodicelabiedru\database\factories\UserFactory.php                                                     | PHP        |         23 |         13 |          5 |         41 |
+| c:\xampp\htdocs\atrodicelabiedru\database\migrations\2022_12_20_144403_create_users_table.php                           | PHP        |         27 |         10 |          4 |         41 |
+| c:\xampp\htdocs\atrodicelabiedru\database\migrations\2022_12_24_111214_create_vehicle_table.php                         | PHP        |         19 |         10 |          4 |         33 |
+| c:\xampp\htdocs\atrodicelabiedru\database\migrations\2022_12_24_114035_create_posts_table.php                           | PHP        |         23 |         13 |          4 |         40 |
+| c:\xampp\htdocs\atrodicelabiedru\database\migrations\2022_12_24_174832_create_places_table.php                          | PHP        |         19 |         13 |          4 |         36 |
+| c:\xampp\htdocs\atrodicelabiedru\database\migrations\2022_12_24_181715_add_role_to_users.php                            | PHP        |         19 |         10 |          4 |         33 |
+| c:\xampp\htdocs\atrodicelabiedru\database\migrations\2022_12_24_182654_create_post_rating_table.php                     | PHP        |         21 |         14 |          4 |         39 |
+| c:\xampp\htdocs\atrodicelabiedru\database\migrations\2022_12_24_183120_create_answers_table.php                         | PHP        |         21 |         14 |          5 |         40 |
+| c:\xampp\htdocs\atrodicelabiedru\database\migrations\2022_12_25_131703_create_keywords_table.php                        | PHP        |         19 |         10 |          4 |         33 |
+| c:\xampp\htdocs\atrodicelabiedru\database\migrations\2022_12_25_131948_create_post_keywords_table.php                   | PHP        |         20 |         10 |          4 |         34 |
+| c:\xampp\htdocs\atrodicelabiedru\database\migrations\2022_12_26_215837_create_post_tags_table.php                       | PHP        |         20 |         10 |          4 |         34 |
+| c:\xampp\htdocs\atrodicelabiedru\database\migrations\2022_12_28_101228_add_column_soft_deletes_to_vehicle_table.php     | PHP        |         19 |         10 |          4 |         33 |
+| c:\xampp\htdocs\atrodicelabiedru\database\migrations\2022_12_29_223253_add_columns_for_images_to_posts_table.php        | PHP        |         19 |         10 |          4 |         33 |
+| c:\xampp\htdocs\atrodicelabiedru\database\migrations\2022_12_29_224122_add_columns_for_previewimages_to_posts_table.php | PHP        |         19 |         10 |          4 |         33 |
+| c:\xampp\htdocs\atrodicelabiedru\database\seeders\DatabaseSeeder.php                                                    | PHP        |          9 |         11 |          5 |         25 |
+| c:\xampp\htdocs\atrodicelabiedru\database\seeders\PostSeeder.php                                                        | PHP        |         12 |          5 |          4 |         21 |
+| c:\xampp\htdocs\atrodicelabiedru\database\seeders\VehicleTableSeeder.php                                                | PHP        |         15 |          5 |          4 |         24 |
+| c:\xampp\htdocs\atrodicelabiedru\lang\en\auth.php                                                                       | PHP        |          6 |         10 |          5 |         21 |
+| c:\xampp\htdocs\atrodicelabiedru\lang\en\pagination.php                                                                 | PHP        |          5 |         10 |          5 |         20 |
+| c:\xampp\htdocs\atrodicelabiedru\lang\en\passwords.php                                                                  | PHP        |          8 |         10 |          5 |         23 |
+| c:\xampp\htdocs\atrodicelabiedru\lang\en\validation.php                                                                 | PHP        |        140 |         30 |          9 |        179 |
+| c:\xampp\htdocs\atrodicelabiedru\package.json                                                                           | JSON       |         14 |          0 |          1 |         15 |
+| c:\xampp\htdocs\atrodicelabiedru\phpunit.xml                                                                            | XML        |         29 |          2 |          1 |         32 |
+| c:\xampp\htdocs\atrodicelabiedru\public\css\placescreate.css                                                            | CSS        |          0 |          0 |          1 |          1 |
+| c:\xampp\htdocs\atrodicelabiedru\public\css\postscreate.css                                                             | CSS        |        261 |          7 |         37 |        305 |
+| c:\xampp\htdocs\atrodicelabiedru\public\css\registration.css                                                            | CSS        |        133 |          0 |          3 |        136 |
+| c:\xampp\htdocs\atrodicelabiedru\public\css\welcome.css                                                                 | CSS        |        417 |         15 |         69 |        501 |
+| c:\xampp\htdocs\atrodicelabiedru\public\index.php                                                                       | PHP        |         14 |         30 |         12 |         56 |
+| c:\xampp\htdocs\atrodicelabiedru\resources\css\app.css                                                                  | CSS        |          0 |          0 |          1 |          1 |
+| c:\xampp\htdocs\atrodicelabiedru\resources\js\app.js                                                                    | JavaScript |         11 |          0 |          1 |         12 |
+| c:\xampp\htdocs\atrodicelabiedru\resources\js\bootstrap.js                                                              | JavaScript |          5 |         22 |          8 |         35 |
+| c:\xampp\htdocs\atrodicelabiedru\resources\js\welcome.js                                                                | JavaScript |         31 |          3 |          3 |         37 |
+| c:\xampp\htdocs\atrodicelabiedru\resources\views\Places\Index.blade.php                                                 | PHP        |         44 |          0 |          1 |         45 |
+| c:\xampp\htdocs\atrodicelabiedru\resources\views\Places\create.blade.php                                                | PHP        |         27 |          0 |          2 |         29 |
+| c:\xampp\htdocs\atrodicelabiedru\resources\views\Places\edit.blade.php                                                  | PHP        |         28 |          0 |          1 |         29 |
+| c:\xampp\htdocs\atrodicelabiedru\resources\views\Places\show.blade.php                                                  | PHP        |         29 |          0 |          1 |         30 |
+| c:\xampp\htdocs\atrodicelabiedru\resources\views\Posts\Index.blade.php                                                  | PHP        |         63 |          0 |          2 |         65 |
+| c:\xampp\htdocs\atrodicelabiedru\resources\views\Posts\create.blade.php                                                 | PHP        |         70 |          0 |          1 |         71 |
+| c:\xampp\htdocs\atrodicelabiedru\resources\views\Posts\edit.blade.php                                                   | PHP        |         71 |          0 |          1 |         72 |
+| c:\xampp\htdocs\atrodicelabiedru\resources\views\Posts\show.blade.php                                                   | PHP        |         42 |          0 |          1 |         43 |
+| c:\xampp\htdocs\atrodicelabiedru\resources\views\User\Index.blade.php                                                   | PHP        |         65 |          0 |          2 |         67 |
+| c:\xampp\htdocs\atrodicelabiedru\resources\views\User\edit.blade.php                                                    | PHP        |         55 |          0 |          1 |         56 |
+| c:\xampp\htdocs\atrodicelabiedru\resources\views\User\show.blade.php                                                    | PHP        |         38 |          0 |          1 |         39 |
+| c:\xampp\htdocs\atrodicelabiedru\resources\views\Vehicle\Vehicle.blade.php                                              | PHP        |         44 |          0 |          1 |         45 |
+| c:\xampp\htdocs\atrodicelabiedru\resources\views\Vehicle\create.blade.php                                               | PHP        |         26 |          0 |          1 |         27 |
+| c:\xampp\htdocs\atrodicelabiedru\resources\views\Vehicle\edit.blade.php                                                 | PHP        |         28 |          0 |          1 |         29 |
+| c:\xampp\htdocs\atrodicelabiedru\resources\views\Vehicle\show.blade.php                                                 | PHP        |         29 |          0 |          1 |         30 |
+| c:\xampp\htdocs\atrodicelabiedru\resources\views\auth\login.blade.php                                                   | PHP        |         57 |          0 |          4 |         61 |
+| c:\xampp\htdocs\atrodicelabiedru\resources\views\auth\registration.blade.php                                            | PHP        |         88 |          0 |          4 |         92 |
+| c:\xampp\htdocs\atrodicelabiedru\resources\views\navbar\app.blade.php                                                   | PHP        |         62 |          0 |          2 |         64 |
+| c:\xampp\htdocs\atrodicelabiedru\resources\views\welcome.blade.php                                                      | PHP        |         12 |          0 |          2 |         14 |
+| c:\xampp\htdocs\atrodicelabiedru\routes\api.php                                                                         | PHP        |          6 |         10 |          4 |         20 |
+| c:\xampp\htdocs\atrodicelabiedru\routes\channels.php                                                                    | PHP        |          5 |         10 |          4 |         19 |
+| c:\xampp\htdocs\atrodicelabiedru\routes\console.php                                                                     | PHP        |          6 |         10 |          4 |         20 |
+| c:\xampp\htdocs\atrodicelabiedru\routes\web.php                                                                         | PHP        |         52 |         11 |         12 |         75 |
+| c:\xampp\htdocs\atrodicelabiedru\tests\CreatesApplication.php                                                           | PHP        |         12 |          5 |          6 |         23 |
+| c:\xampp\htdocs\atrodicelabiedru\tests\Feature\ExampleTest.php                                                          | PHP        |         11 |          6 |          5 |         22 |
+| c:\xampp\htdocs\atrodicelabiedru\tests\TestCase.php                                                                     | PHP        |          7 |          0 |          4 |         11 |
+| c:\xampp\htdocs\atrodicelabiedru\tests\Unit\ExampleTest.php                                                             | PHP        |         10 |          5 |          4 |         19 |
+| c:\xampp\htdocs\atrodicelabiedru\vendor\spatie\ignition\resources\compiled\ignition.css                                 | CSS        |          1 |          2 |          0 |          3 |
+| c:\xampp\htdocs\atrodicelabiedru\vendor\spatie\ignition\resources\compiled\ignition.js                                  | JavaScript |          6 |          0 |          1 |          7 |
+| c:\xampp\htdocs\atrodicelabiedru\vite.config.js                                                                         | JavaScript |         10 |          0 |          2 |         12 |
+| Total                                                                                                                   |            |     12,027 |      1,916 |        891 |     14,834 |
++-------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

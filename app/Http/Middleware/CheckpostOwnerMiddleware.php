@@ -24,12 +24,11 @@ class CheckpostOwnerMiddleware
         $postId = $request->route('posts')->id;
         $post = Post::where('id', $postId)->first();
         // Check if the authenticated user has the same id as the user in the route parameter
-        if ($post&& $authenticatedUser == $post->user_id) {
+        if ($post && $authenticatedUser == $post->user_id) {
             // The authenticated user has the same id as the user in the route parameter, so proceed with the request
             return $next($request);
         }
-        if (auth::check() && auth::user()->isAdmin())
-        {
+        if (auth::check() && auth::user()->isAdmin()) {
             return $next($request);
         }
         // The authenticated user does not have the same id as the user in the route parameter, so redirect to a different page or return a response

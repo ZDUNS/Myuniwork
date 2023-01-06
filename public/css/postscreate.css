@@ -3,7 +3,7 @@ body {
 	color: #666666;
 	font-family: "Open Sans", sans-serif;
 	background-size:cover;
-    background-repeat: no-repeat;
+  background-repeat: no-repeat;
 	background-attachment: fixed;
   }
   
@@ -30,7 +30,6 @@ body {
   h2,
   h3,
   h4,
-  h5,
   h6 {
 	font-family: "Montserrat", sans-serif;
 	font-weight: 400;
@@ -84,52 +83,51 @@ body {
 	}
   }
 
-  
   /*--------------------------------------------------------------
   # Header
   --------------------------------------------------------------*/
   #header {
-	transition: all 0.5s;
-	z-index: 997;
-	background: rgba(0, 0, 0, 0.9);
-	height: 80px;
-  }
+    transition: all 0.5s;
+    z-index: 997;
+    background: rgba(0, 0, 0, 0.9);
+    height: 80px;
+    }
+    
+    #header.header-transparent {
+    background: transparent;
+    }
+    
+    #header.header-scrolled {
+    background: rgba(0, 0, 0, 0.9);
+    height: 60px;
+    }
+    
+    #header .logo {
+    font-size: 34px;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    padding-left: 10px;
+    border-left: 4px solid #a11bae;
+    }
+    
+    #header .logo a {
+    color: #fff;
+    }
+    
+    #header .logo img {
+    max-height: 40px;
+    }
+    
+    @media (max-width: 992px) {
+    #header .logo {
+      font-size: 28px;
+    }
+    }
   
-  #header.header-transparent {
-	background: transparent;
-  }
-  
-  #header.header-scrolled {
-	background: rgba(0, 0, 0, 0.9);
-	height: 60px;
-  }
-  
-  #header .logo {
-	font-size: 34px;
-	margin: 0;
-	padding: 0;
-	font-family: "Montserrat", sans-serif;
-	font-weight: 700;
-	letter-spacing: 3px;
-	padding-left: 10px;
-	border-left: 4px solid #a11bae;
-  }
-  
-  #header .logo a {
-	color: #fff;
-  }
-  
-  #header .logo img {
-	max-height: 40px;
-  }
-  
-  @media (max-width: 992px) {
-	#header .logo {
-	  font-size: 28px;
-	}
-  }
-
-  
+    
   /*--------------------------------------------------------------
   # Navigation Menu
   --------------------------------------------------------------*/
@@ -251,7 +249,7 @@ body {
     padding: 60px 32px;
     width: 679px;
     transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(224, 191, 227, 0.8);
     box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
   }
 
@@ -261,27 +259,6 @@ body {
     font-weight: 600;
     margin: 0 0 35px 0; 
   }
-  .field {
-    position: relative;
-    height: 45px;
-    width: 100%;
-    display: flex;
-    background: rgba(255, 255, 255, 0.94);
-  }
-  .field span {
-    color: #222;
-    width: 40px;
-    line-height: 45px;
-  }
-.field input {
-    height: 100%;
-    width: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: #222;
-    font-size: 16px; 
-  }
   .main label {
     color: #a11bae;
     font-size: 22px;
@@ -290,6 +267,7 @@ body {
     clear: both;
     display: inline-block;
     overflow: hidden;
+    background-color: white;
   }
   .main select {
   width: 42.5rem;
@@ -312,4 +290,16 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
-  
+
+ .field input[type="submit"] {
+    background: #a11bae;
+    border: 1px solid #a11bae;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer; 
+  }
+.field input[type="submit"]:hover {
+    background: #a11bae;
+  }

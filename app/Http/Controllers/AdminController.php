@@ -11,18 +11,23 @@ use App\Models\Post;
 class AdminController extends Controller
 {
     // Middleware
-    public function __construct() {
+    public function __construct()
+    {
         // Tikai adminam ir piekluve
         $this->middleware('admin');
     }
 
-    public function __invoke() {
+    public function __invoke()
+    {
         //saskaitam katras kategorijas atributus un liekam masīvā data
-        $data = [];
-        $data ['usersCount'] = User::all()->count();
-        $data ['postsCount'] = Post::all()->count();
-        $data ['vehicleCount'] = Vehicle::all()->count();
-        $data ['placesCount'] = Places::all()->count();
-        return view('welcome', compact('data'));
+        //
     }
+    //public function index() {
+    // $data = [];
+    // $data ['usersCount'] = User::all()->count();
+    // $data ['postsCount'] = Post::all()->count();
+    // $data ['vehicleCount'] = Vehicle::all()->count();
+    //  $data ['placesCount'] = Places::all()->count();
+    // return view('Admin.Index', compact('data'));
 }
+//}

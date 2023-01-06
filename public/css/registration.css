@@ -7,7 +7,7 @@
   font-family: 'Poppins', sans-serif;
 }  
 .container {
-  background: url("images/bg-1.jpg");
+  background: url("wallpapersden.com_cloudy-mountains_3840x2160.jpg");
   height: 100vh;
   background-size: cover;
   background-position: center;
@@ -19,7 +19,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.5) url("/img/travelbuddyWlcome.jpeg");
+  background: rgba(0, 0, 0, 0.5) url("/img/wallpapersden.com_cloudy-mountains_3840x2160.jpg");
   background-size:cover;
   background-repeat: no-repeat;
   background-blend-mode: darken;

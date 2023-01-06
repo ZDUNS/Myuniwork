@@ -18,20 +18,21 @@ class AnswerController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->except(['_token']);//lai nav token_id errora
-        $request->validate([
-            'description'=>'required | string |min:3|max:1000 ',
-        ],
+        $data = $request->except(['_token']); //lai nav token_id errora
+        $request->validate(
             [
-                'description.required'=>'Lūdzu aizpildiet šo lauku!',
-                'description.min'=>'Komentāram jāsatur vismaz 3 simboli',
-                'description.max'=>'Komentāram jāsatur maksimums 1000 simboli',
+                'description' => 'required | string |min:3|max:1000 ',
+            ],
+            [
+                'description.required' => 'Lūdzu aizpildiet šo lauku!',
+                'description.min' => 'Komentāram jāsatur vismaz 3 simboli',
+                'description.max' => 'Komentāram jāsatur maksimums 1000 simboli',
 
-        ]);
-        $data['user_id']=Auth::user()->id;
+            ]
+        );
+        $data['user_id'] = Auth::user()->id;
         Answer::create($data);
-        return redirect()->route('Posts.show', ['posts'=>$data['post_id']]);
+        return redirect()->route('Posts.show', ['posts' => $data['post_id']]);
         $data['user_id'] = $request->session()->get('loginid');
     }
-
 }

@@ -8,8 +8,9 @@ use Illuminate\Contracts\Auth\Authenticatable;
 
 
 class User extends Model implements Authenticatable
-{ 
-    public function isAdmin() {
+{
+    public function isAdmin()
+    {
         return ($this->role == 2);
     }
 
@@ -17,7 +18,4 @@ class User extends Model implements Authenticatable
     protected $table = 'users';
     protected $guarded = false; //lai tabula mainit
     protected $primaryKey = 'id';
-
-    
-    
 }

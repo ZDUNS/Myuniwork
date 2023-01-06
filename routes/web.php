@@ -15,6 +15,7 @@ use App\Http\Controllers\Places\StorePlacesController;
 use App\Http\Controllers\Posts\PostsController;
 use App\Http\Controllers\Users\IndexController;
 use App\Http\Controllers\Answer\AnswerController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,25 +32,25 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware('isloggedin');
 
-Route::get('/login' , [AuthController::class, 'login']);
-Route::get('/registration' , [AuthController::class, 'registration']);
+Route::get('/login', [AuthController::class, 'login']);
+Route::get('/registration', [AuthController::class, 'registration']);
 Route::post('/register-user', [AuthController::class, 'registerUser'])->name('register-user');
-Route::post('login-user',[AuthController::class, 'loginUser'])->name('login-user');
+Route::post('login-user', [AuthController::class, 'loginUser'])->name('login-user');
 Route::get('/welcome', [AuthController::class, 'welcome'])->middleware('isloggedin');
 Route::get('/logout', [AuthController::class, 'logout'])->middleware('isloggedin');
 
-Route::get('/Places' , [PlacesController::class, 'index'])->name('Places.Index')->middleware('isloggedin'); //Lai pieklutu valstu skatam
-Route::get('/Posts' , [PostsController::class, 'index'])->name('Posts.Index')->middleware('isloggedin'); //Lai pieklutu valstu skatam
-Route::get('/Vehicle' , [VehicleController::class, 'index'])->name('Vehicle.Vehicle')->middleware('isloggedin'); //Lai pieklutu transportu skatam
+Route::get('/Places', [PlacesController::class, 'index'])->name('Places.Index')->middleware('isloggedin'); //Lai pieklutu valstu skatam
+Route::get('/Posts', [PostsController::class, 'index'])->name('Posts.Index')->middleware('isloggedin'); //Lai pieklutu valstu skatam
+Route::get('/Vehicle', [VehicleController::class, 'index'])->name('Vehicle.Vehicle')->middleware('isloggedin'); //Lai pieklutu transportu skatam
 
-Route::get('/AddNewPlace' , [PlacesController::class, 'create'])->name('Places.create')->middleware('isloggedin', 'Admin'); //Lai pieklutu valstu izveidosanas skatam
-Route::get('/Create' , [CreateVehicleController::class, 'index'])->name('Vehicle.create')->middleware('isloggedin', 'Admin');//Lai pieklutu transportu izveidosanas skatam
-Route::get('/AddNewPost' , [PostsController::class, 'create'])->name('Posts.create')->middleware('isloggedin');
+Route::get('/AddNewPlace', [PlacesController::class, 'create'])->name('Places.create')->middleware('isloggedin', 'Admin'); //Lai pieklutu valstu izveidosanas skatam
+Route::get('/Create', [CreateVehicleController::class, 'index'])->name('Vehicle.create')->middleware('isloggedin', 'Admin'); //Lai pieklutu transportu izveidosanas skatam
+Route::get('/AddNewPost', [PostsController::class, 'create'])->name('Posts.create')->middleware('isloggedin');
 
-Route::post('/storepost',[PostsController::class, 'store'])->name('Posts.store')->middleware('isloggedin');
-Route::post('/',[StoreController::class, 'store'])->name('Vehicle.store')->middleware('isloggedin');
+Route::post('/storepost', [PostsController::class, 'store'])->name('Posts.store')->middleware('isloggedin');
+Route::post('/', [StoreController::class, 'store'])->name('Vehicle.store')->middleware('isloggedin');
 Route::get('/{posts}', [PostsController::class, 'show'])->name('Posts.show')->middleware('isloggedin');
-Route::get('/{posts}/editing', [PostsController::class, 'edit'])->name('Posts.edit')->middleware('isloggedin' , 'CheckpostOwner');
+Route::get('/{posts}/editing', [PostsController::class, 'edit'])->name('Posts.edit')->middleware('isloggedin', 'CheckpostOwner');
 Route::delete('/{posts}/delete', [PostsController::class, 'destroy'])->name('Posts.delete')->middleware('isloggedin', 'CheckpostOwner');
 Route::patch('/{posts}/update', [PostsController::class, 'update'])->name('Posts.update')->middleware('isloggedin');
 
@@ -58,7 +59,7 @@ Route::get('/{vehicles}/edit', [EditController::class, 'edit'])->name('Vehicle.e
 Route::delete('/{vehicles}', [DeleteController::class, 'destroy'])->name('Vehicle.delete')->middleware('isloggedin', 'Admin');
 Route::patch('/{vehicles}', [UpdateController::class, 'update'])->name('Vehicle.update')->middleware('isloggedin', 'Admin');
 
-Route::post('/store',[StorePlacesController::class, 'store'])->name('Places.store')->middleware('isloggedin');
+Route::post('/store', [StorePlacesController::class, 'store'])->name('Places.store')->middleware('isloggedin');
 Route::get('/{places}/show/this', [PlacesController::class, 'show'])->name('Places.show')->middleware('isloggedin');
 Route::get('/{places}/editing/this', [PlacesController::class, 'edit'])->name('Places.edit')->middleware('isloggedin', 'Admin');
 Route::delete('/{places}/delete/this', [PlacesController::class, 'destroy'])->name('Places.delete')->middleware('isloggedin', 'Admin');
@@ -71,4 +72,4 @@ Route::get('/{users}/editing/my/profile', [IndexController::class, 'edit'])->nam
 Route::patch('/{users}/update/my/profile', [IndexController::class, 'update'])->name('User.update')->middleware('isloggedin');
 Route::get('/{users}/show', [IndexController::class, 'show'])->name('User.show')->middleware('isloggedin');
 
-Route::post('/AddAnswer',[AnswerController::class, 'store'])->name('Answer.store')->middleware('isloggedin');
+Route::post('/AddAnswer', [AnswerController::class, 'store'])->name('Answer.store')->middleware('isloggedin');

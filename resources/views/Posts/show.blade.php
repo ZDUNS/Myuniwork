@@ -3,6 +3,8 @@
 @section('content')
     <div class="col-sm-6 d-flex">
         <div class="main">
+            <h4>Diskusiju Izveidoja: <td>{{ $user->username }}</td>
+            </h4>
             <header>{{ $posts->title }}</header>
             <div class="form-group">
                 <label>Ceļojuma galamērķis: <td>{{ $place->name }}</td></label>
@@ -17,7 +19,6 @@
                 <img src="{{ asset('storage/' . $posts->image) }}" alt="image" class="foredit">
                 <div class="form-group">
                     <label>Ceļojuma veids: <td>{{ $vehicle->name }}</td></label>
-                    <label>Izveidoja: <td>{{ $user->username }}</td></label>
                 </div>
                 <label>Komentāri:</label>
                 @foreach ($answers as $answer)
@@ -31,7 +32,7 @@
                         <input type="text" name="description" class="form-control" />
                         <input type="hidden" name="post_id" value="{{ $posts->id }}" />
                     </div>
-                    <div class="form-group">
+                    <div class="field">
                         <input type="submit" class="btn btn-warning" value="Pievienot komentāru" />
                     </div>
                 </form>
