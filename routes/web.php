@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\CreateVehicleController;
@@ -42,7 +43,8 @@ Route::get('/logout', [AuthController::class, 'logout'])->middleware('isloggedin
 Route::get('/Places', [PlacesController::class, 'index'])->name('Places.Index')->middleware('isloggedin'); //Lai pieklutu valstu skatam
 Route::get('/Posts', [PostsController::class, 'index'])->name('Posts.Index')->middleware('isloggedin'); //Lai pieklutu valstu skatam
 Route::get('/Vehicle', [VehicleController::class, 'index'])->name('Vehicle.Vehicle')->middleware('isloggedin'); //Lai pieklutu transportu skatam
-
+Route::get('/Alldata', [MainController::class, 'index'])->name('Adminview')->middleware('isloggedin', 'Admin'); 
+Route::get('/User', [IndexController::class, 'index'])->name('User.Index')->middleware('isloggedin');
 Route::get('/AddNewPlace', [PlacesController::class, 'create'])->name('Places.create')->middleware('isloggedin', 'Admin'); //Lai pieklutu valstu izveidosanas skatam
 Route::get('/Create', [CreateVehicleController::class, 'index'])->name('Vehicle.create')->middleware('isloggedin', 'Admin'); //Lai pieklutu transportu izveidosanas skatam
 Route::get('/AddNewPost', [PostsController::class, 'create'])->name('Posts.create')->middleware('isloggedin');
@@ -66,10 +68,14 @@ Route::delete('/{places}/delete/this', [PlacesController::class, 'destroy'])->na
 Route::patch('/{places}/update/this', [PlacesController::class, 'update'])->name('Places.update')->middleware('isloggedin', 'Admin');
 
 
-Route::get('/user', [IndexController::class, 'index'])->name('User.Index')->middleware('isloggedin');
 //Route::get('/{users}/editing/my/profile', [IndexController::class, 'edit'])->name('User.edit')->middleware('isloggedin');
 Route::get('/{users}/editing/my/profile', [IndexController::class, 'edit'])->name('User.edit')->middleware('isloggedin', 'CheckUserId');
 Route::patch('/{users}/update/my/profile', [IndexController::class, 'update'])->name('User.update')->middleware('isloggedin');
-Route::get('/{users}/show', [IndexController::class, 'show'])->name('User.show')->middleware('isloggedin');
+Route::get('/{users}/show/profile', [IndexController::class, 'show'])->name('User.show')->middleware('isloggedin');
 
 Route::post('/AddAnswer', [AnswerController::class, 'store'])->name('Answer.store')->middleware('isloggedin');
+Route::get('/gallery/welcome', function () {
+    return view('traveling.gallery');
+})->middleware('isloggedin');
+Route::delete('/{users}/delete//my/profile', [IndexController::class, 'destroy'])->name('User.delete')->middleware('isloggedin');
+Route::post('/store/users', [IndexController::class, 'store'])->name('User.store')->middleware('isloggedin');

@@ -25,8 +25,8 @@ class AnswerController extends Controller
             ],
             [
                 'description.required' => 'Lūdzu aizpildiet šo lauku!',
-                'description.min' => 'Komentāram jāsatur vismaz 3 simboli',
-                'description.max' => 'Komentāram jāsatur maksimums 1000 simboli',
+                'description.min' => 'Atbildei jāsatur vismaz 3 simboli!',
+                'description.max' => 'Atbildei jāsatur maksimums 1000 simboli!',
 
             ]
         );

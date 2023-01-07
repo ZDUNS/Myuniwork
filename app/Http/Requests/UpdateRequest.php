@@ -24,7 +24,13 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required | string |min:3|max:100 | unique:vehicle',
+            'name' => 'required | string |min:3|max:100 | unique:vehicle',
+        ];
+        [
+            'name.required' => 'Lūdzu aizpildiet šo lauku!',
+            'name.unique' => 'Šāds ceļojuma veids jau eksistē!',
+            'name.min' => 'Ceļojuma veida nosaukumam jāsatur vismaz 3 simboli!',
+            'name.max' => 'Ceļojuma veida nosaukumam jāsatur ne vairāk par 100 simboliem!',
         ];
     }
 }

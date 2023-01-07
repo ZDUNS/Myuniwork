@@ -17,13 +17,15 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             //$table->integer('user_id');
-            $table->unsignedInteger('place_id')->references('id')->on('places');
-            $table->unsignedInteger('vehicle_id')->references('id')->on('vehicle');
-            $table->unsignedInteger('user_id')->references('id')->on('users');
             $table->string('title');
             $table->text('description');
-           // $table->integer('rating');
-           // $table->integer('closed')->unsigned();
+            $table->unsignedBigInteger('vehicle_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('place_id');
+            
+            $table->foreign('vehicle_id')->references('id')->on('vehicle')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('place_id')->references('id')->on('places')->onDelete('cascade');
         });
     }
 

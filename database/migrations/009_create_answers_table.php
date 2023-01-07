@@ -13,16 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('post_rating', function (Blueprint $table) {
+        Schema::create('answers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('post_id')->references('id')->on('posts');
+            $table->timestamps();
+            $table->unsignedBigInteger('post_id');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
             //$table->integer('discussion_id')->unsigned();
             //$table->foreign('discussion_id')->references('id')->on('discussions');
-            $table->unsignedInteger('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             //$table->integer('user_id')->unsigned();
             //$table->foreign('user_id')->references('id')->on('users');
-            $table->integer('like_dislike');
-            $table->timestamps();
+            $table->text('description');
+
         });
     }
 
@@ -33,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_rating');
+        Schema::dropIfExists('answers');
     }
 };

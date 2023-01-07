@@ -7,39 +7,40 @@
                 <div class="main">
                     <header>Profila rediģēšana</header>
                     <form action="{{ route('User.update', $users->id) }}" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="id" value="{{ $users->id }}">
                         @csrf
                         @method('PATCH')
-                        <div class="field">
+                        <div class="field space">
                             <input type="text" placeholder="   Ievadiet lietotāja vārdu" name="username"
-                                value="{{ $users->username }}">
-                        </div>
+                                value="{{Auth::user()->username}}">
+                            </div>
                         <span class="text-danger">
                             @error('username')
                                 {{ $message }}
                             @enderror
                         </span>
-                        <div class="field">
+                        <div class="field space">
                             <input type="text" placeholder="   Ievadiet pilnu vārdu" name="firstName"
-                                value="{{ $users->firstName }}">
-                        </div>
+                                value="{{Auth::user()->firstName }}">
+                            </div>
                         <span class="text-danger">
                             @error('firstName')
                                 {{ $message }}
                             @enderror
                         </span>
-                        <div class="field">
+                        <div class="field space">
                             <input type="text" placeholder="   Ievadiet pilnu uzvārdu" name="lastName"
-                                value="{{ $users->lastName }}">
-                        </div>
+                                value="{{Auth::user()->lastName }}">
+                            </div>
                         <span class="text-danger">
                             @error('lastName')
                                 {{ $message }}
                             @enderror
                         </span>
-                        <div class="field">
+                        <div class="field space">
                             <input type="text" placeholder="   Ievadiet E-pasta adresi" name="email"
-                                value="{{ $users->email }}">
-                        </div>
+                                value="{{Auth::user()->email }}">
+                            </div>
                         <span class="text-danger">
                             @error('email')
                                 {{ $message }}

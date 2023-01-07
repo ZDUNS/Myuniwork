@@ -1,0 +1,11 @@
+"filename", "language", "PHP", "comment", "blank", "total"
+"c:\xampp\htdocs\atrodicelabiedru\app\Http\Controllers\AuthController.php", "PHP", 6, 1, 0, 7
+"c:\xampp\htdocs\atrodicelabiedru\app\Http\Controllers\Places\StorePlacesController.php", "PHP", 2, 0, 0, 2
+"c:\xampp\htdocs\atrodicelabiedru\app\Http\Controllers\Posts\PostsController.php", "PHP", 2, 0, 0, 2
+"c:\xampp\htdocs\atrodicelabiedru\app\Http\Controllers\StoreController.php", "PHP", 2, 0, 0, 2
+"c:\xampp\htdocs\atrodicelabiedru\app\Http\Controllers\Users\IndexController.php", "PHP", 7, 3, 0, 10
+"c:\xampp\htdocs\atrodicelabiedru\app\Http\Middleware\CheckpostOwnerMiddleware.php", "PHP", -1, 0, 0, -1
+"c:\xampp\htdocs\atrodicelabiedru\app\Http\Requests\UpdateRequest.php", "PHP", 6, 0, 0, 6
+"c:\xampp\htdocs\atrodicelabiedru\app\Http\Requests\Users\UpdateUserRequest.php", "PHP", 7, 0, 0, 7
+"c:\xampp\htdocs\atrodicelabiedru\routes\web.php", "PHP", 0, 0, 1, 1
+"Total", "-", 31, 4, 1, 36

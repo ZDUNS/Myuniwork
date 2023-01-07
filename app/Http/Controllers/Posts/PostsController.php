@@ -66,7 +66,7 @@ class PostsController extends Controller
         $request->validate(
             [
                 'title' => 'required | string |min:3|max:80 | unique:posts',
-                'description' => 'required | string |min:3|max:255 ',
+                'description' => 'required | string |min:3|max:350 ',
                 'preview_image' => 'required | file',
                 'image' => 'required | file',
                 'vehicle_id' => 'required | integer | exists:vehicle,id',
@@ -75,6 +75,10 @@ class PostsController extends Controller
             [
                 'title.required' => 'Lūdzu aizpildiet šo lauku!',
                 'title.unique' => 'Diskusija ar šādu nosaukumu jau eksistē, lūdzu izvēlieties citu nosaukumu!',
+                'title.min'=>'Diskusijas nosaukumam jāsatur vismaz 3 simboli!',
+                'title.max'=>'Diskusijas nosaukumam jāsatur ne vairāk par 80 simboliem!',
+                'description.min' => 'Diskusijas saturam jāsatur vismaz 3 simboli!',
+                'description.max' => 'Diskusijas saturam jāsatur ne vairāk par 350 simboliem!',
                 'description.required' => 'Lūdzu aizpildiet šo lauku!',
                 'preview_image.required' => 'Lūdzu augšupielādējiet pirmskata attēlu',
                 'image.required' => 'Lūdzu augšupielādējiet attēlu',

@@ -1,10 +1,13 @@
 <?php
-//namespace App\Http\Requests\Vehicle\StoreRequest;
-namespace App\Http\Controllers;
-use App\Models\Vehicle;
-use Illuminate\Http\Request;
 
-class StoreController extends Controller
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Post;
+use App\Models\Places;
+
+class MainController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +16,11 @@ class StoreController extends Controller
      */
     public function index()
     {
-       //
+        $data = [];
+        $data['usersCount'] = User::all()->count();
+        $data['postsCount'] = Post::all()->count();
+        $data['placesCount'] = Places::all()->count();
+        return view('Adminview', compact('data'));
     }
 
     /**
@@ -34,24 +41,7 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->except(['_token']);//lai nav token_id errora
-        //$rules = $rules = array(
-           // 'name'=> 'required | string |min:3|max:191 | unique:vehicle',
-       // );
-        //$this->validate($request, $rules);
-        $request->validate(
-            [
-            'name'=>'required | string |min:3|max:100 | unique:vehicle',
-        ],
-            [
-                'name.required'=>'Lūdzu aizpildiet šo lauku!',
-                'name.unique'=>'Šāds ceļojuma veids jau eksistē!',
-                'name.min'=>'Ceļojuma veida nosaukumam jāsatur vismaz 3 simboli!',
-                'name.max'=>'Ceļojuma veida nosaukumam jāsatur ne vairāk par 100 simboliem!',
-
-        ]);
-        Vehicle::firstOrCreate($data);
-        return redirect('Create');
+        //
     }
 
     /**

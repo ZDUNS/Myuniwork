@@ -13,11 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('post_tags', function (Blueprint $table) {
-            $table->id();
+        Schema::create('users', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('username')->unique();
+            $table->string('email')->unique();
+            $table->string('firstName');
+            $table->string('lastName');
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
-            $table->unsignedInteger('post_id')->references('id')->on('posts');
-            $table->unsignedInteger('vehicle_id')->references('id')->on('vehicle');
         });
     }
 
@@ -28,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_tags');
+        Schema::dropIfExists('users');
     }
 };

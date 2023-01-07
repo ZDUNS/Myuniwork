@@ -4,8 +4,10 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="main">
+                <div class="main1">
                     <header>Diskusijas rediģēšana</header>
+                    <h1>Ceļojumu kalendārs</h1>
+                    <iframe src="https://calendar.google.com/calendar/embed?height=500&wkst=1&bgcolor=%23B39DDB&ctz=Europe%2FRiga&src=bGllbmVyZWNhNDhAZ21haWwuY29t&color=%23039BE5" style="border:solid 1px #777" width="500" height="500" frameborder="0" scrolling="no"></iframe>
                     <form action="{{ route('Posts.update', $posts->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')

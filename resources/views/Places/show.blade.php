@@ -1,7 +1,7 @@
 @extends('navbar.app')
 @section('title', 'Ceļojumu galamērķi')
 @section('content')
-    <div class="col-sm-6 d-flex">
+    <div class="main">
         <h1 class="m-0">{{ $places->name }}</h1>
         <a href="{{ route('Places.edit', $places->id) }}"><i class="fas fa-pencil-alt"></i></a>
         <section class="content">
@@ -25,5 +25,8 @@
                     </div>
                 </div>
             </div>
+            </div>
+        </section>
+    </div>
         </section>
     @endsection

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Users;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Http\Requests\Users\UpdateUserRequest;
+use Illuminate\Support\Facades\Auth;
 
 class IndexController extends Controller
 {
@@ -16,7 +16,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = Auth::user();
         return view('User.Index', compact('users'));
     }
 
@@ -104,14 +104,48 @@ class IndexController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateUserRequest $request, User $users)
+    public function update(Request $request)
     {
-        //$users = auth()->user();
-        $data = $request->validated();
-        //dd($data);
-        $users->update($data);
+     $request->validate([
+        'username'=>'required|min:5|max:30|unique:users,username,'.$request->id,
+        'firstName'=>'required|min:3|max:60',
+        'lastName'=>'required|min:3|max:60',
+        'email'=>'required|min:4|max:190|unique:users,email,'.$request->id,
+           //'password'=>'required|min:8|max:18',
+     ],
+        [
+            'firstName.required'=>'Lūdzu aizpildiet šo lauku!',
+            'lastName.required'=>'Lūdzu aizpildiet šo lauku!',
+            'username.required'=>'Lūdzu aizpildiet šo lauku!',
+            'username.min' => 'Lietotāja vārdam jāsatur vismaz 5 simboli!',
+            'username.max' => 'Lietotāja jāsatur ne vairāk par 30 simboliem!',
+            'email.required'=>'Lūdzu aizpildiet šo lauku!',
+            'email.min' => 'E-pasta adresei jāsatur vismaz 4 simboli!',
+            'email.max' => 'E-pasta adresei jāsatur ne vairāk par 190 simboliem!',
+            'firstName.min' => 'Vārdam jāsatur vismaz 3 simboli!',
+            'firstName.max' => 'Vārdam jāsatur ne vairāk par 60 simboliem!',
+            'lastName.min' => 'Uzvārdam jāsatur vismaz 3 simboli!',
+            'lastName.max' => 'Uzvārdam jāsatur ne vairāk par 60 simboliem!',
+            'username.unique'=>'Lietotājs ar šādu lietotāja vārdu jau eksistē, lūdzu ievadiet citu lietotāja vārdu!',
+            'email.unique'=>'Lietotājs ar šādu e-pastu jau eksistē!',
+            
+
+    ]);
+    // Update the event information in the database
+    $users = User::find($request->id);
+    $users->username = $request->username;
+    $users->firstName = $request->firstName;
+    $users->lastName = $request->lastName;
+    $users->email = $request->email;
+    // Save the updated event information in the database
+    $res = $users->save();
+    // Display a success or failure message to the user
+    if ($res) {
         return view('User.show', compact('users'));
+    } else {
+        return back()->with('fail', 'Kaut kas nogāja greizi!');
     }
+}
 
     /**
      * Remove the specified resource from storage.
@@ -119,8 +153,10 @@ class IndexController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $users)
     {
-        //
+        User::find($users);
+        $users->forceDelete();
+        return view('auth.registration');
     }
 }

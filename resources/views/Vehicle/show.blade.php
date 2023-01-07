@@ -1,7 +1,7 @@
 @extends('navbar.app')
 @section('title', 'Ceļojuma veids')
 @section('content')
-    <div class="col-sm-6 d-flex">
+    <div class="main">
         <h1 class="m-0">{{ $vehicles->name }}</h1>
         <a href="{{ route('Vehicle.edit', $vehicles->id) }}"><i class="fas fa-pencil-alt"></i></a>
         <section class="content">
@@ -25,5 +25,6 @@
                     </div>
                 </div>
             </div>
-        </section>
-    @endsection
+    </div>
+    </section>
+@endsection

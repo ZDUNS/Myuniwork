@@ -68,7 +68,7 @@ class UpdateController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateRequest $request,Vehicle $vehicles)
-    {
+    { 
         $data = $request->validated();
         $vehicles->update($data);
         return view('Vehicle.show', compact('vehicles'));
