@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Post;
 use App\Models\Places;
+use App\Models\Vehicle;
 
 class MainController extends Controller
 {
@@ -20,6 +21,7 @@ class MainController extends Controller
         $data['usersCount'] = User::all()->count();
         $data['postsCount'] = Post::all()->count();
         $data['placesCount'] = Places::all()->count();
+        $data['vehicleCount'] = Vehicle::all()->count();
         return view('Adminview', compact('data'));
     }
 

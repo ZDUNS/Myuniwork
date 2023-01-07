@@ -32,6 +32,12 @@ use App\Http\Controllers\AdminController;
 Route::get('/', function () {
     return view('welcome');
 })->middleware('isloggedin');
+Route::get('/AboutUs', function () {
+    return view('AboutUs');
+})->middleware('isloggedin');
+Route::get('/SafeTrip', function () {
+    return view('SafeTrip');
+})->middleware('isloggedin');
 
 Route::get('/login', [AuthController::class, 'login']);
 Route::get('/registration', [AuthController::class, 'registration']);

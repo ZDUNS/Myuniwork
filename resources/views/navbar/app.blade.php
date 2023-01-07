@@ -24,13 +24,13 @@
                 <nav id="navbar" class="navbar">
                     <ul>
                         <li><a class="nav-link scrollto active" href="{{ url('welcome') }}">Galvenais skats</a></li>
-                        <li><a class="nav-link scrollto" href="#about">Par mums</a></li>
+                        <li><a class="nav-link scrollto" href="AboutUs">Par mums</a></li>
                         <li><a class="nav-link scrollto" href="#services">Pēdējie jaunumi</a></li>
                         @if (!Auth::guest() && Auth::user()->isAdmin())
                         <li><a class="nav-link scrollto " href="{{ url('Alldata') }}">Administratora skats</a></li>
                         @endif
                         <li><a class="nav-link scrollto" href="{{ url('gallery/welcome') }}">Ceļojuma iedvesmas foto</a></li>
-                        <li><a class="nav-link  " href="blog.html">Ceļo droši</a></li>
+                        <li><a class="nav-link  " href="{{ url('SafeTrip') }}">Ceļo droši</a></li>
                         <li class="dropdown"><a href="{{ url('Vehicle') }}"><span>Ceļojumu veidi</span> <i
                                     class="bi bi-chevron-down"></i></a>
                             <ul>
