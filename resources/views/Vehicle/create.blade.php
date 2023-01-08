@@ -1,5 +1,7 @@
 @extends('navbar.app')
 @section('title', 'Jauna ceļojumu veida izveidošana')
+@section('about_text', 'Par mums')
+@section('AboutUs', '/AboutUs')
 @section('content')
     <section class="content">
         <div class="container-fluid">

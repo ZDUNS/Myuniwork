@@ -75,8 +75,8 @@ class PostsController extends Controller
             [
                 'title.required' => 'Lūdzu aizpildiet šo lauku!',
                 'title.unique' => 'Diskusija ar šādu nosaukumu jau eksistē, lūdzu izvēlieties citu nosaukumu!',
-                'title.min'=>'Diskusijas nosaukumam jāsatur vismaz 3 simboli!',
-                'title.max'=>'Diskusijas nosaukumam jāsatur ne vairāk par 80 simboliem!',
+                'title.min' => 'Diskusijas nosaukumam jāsatur vismaz 3 simboli!',
+                'title.max' => 'Diskusijas nosaukumam jāsatur ne vairāk par 80 simboliem!',
                 'description.min' => 'Diskusijas saturam jāsatur vismaz 3 simboli!',
                 'description.max' => 'Diskusijas saturam jāsatur ne vairāk par 350 simboliem!',
                 'description.required' => 'Lūdzu aizpildiet šo lauku!',

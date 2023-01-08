@@ -17,16 +17,15 @@ class CheckUserIdMiddleware
      */
     public function handle($request, Closure $next)
     {
-        // Get the authenticated user
+        // Saņemaam autentificēto lietotāju
         $authenticatedUser = auth()->user()->id;
-        // Get the user id from the route parameter
+        // saņem id no route parametra
         $userId = $request->route('users')->id;
-        // Check if the authenticated user has the same id as the user in the route parameter
+        // pārbaudām vai id sakrīt
         if ($authenticatedUser == $userId) {
-            // The authenticated user has the same id as the user in the route parameter, so proceed with the request
+            
             return $next($request);
         }
-        // The authenticated user does not have the same id as the user in the route parameter, so redirect to a different page or return a response
-        return redirect('/');
+        
     }
 }

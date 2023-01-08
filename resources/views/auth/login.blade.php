@@ -13,7 +13,7 @@
     <div class="container"></div>
     <div class="row">
         <!-- <div class="col-md-4 col-md-offset-4" style="margin-top:20px;"> -->
-        <header>Pieslēgšanās</header>
+        <header>Pieteikšanās</header>
         <form action="{{ route('login-user') }}" method="post">
             @csrf
             @if (Session::has('success'))
@@ -43,7 +43,6 @@
                 @enderror
             </span>
             <div class="pass">
-                <a href="#">Aizmirsāt paroli?</a>
             </div>
             <div class="field">
                 <input type="submit" value="Pieslēgties">

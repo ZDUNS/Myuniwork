@@ -1,5 +1,7 @@
 @extends('navbar.app')
 @section('title', 'Ceļojuma galamērķu rediģēšana')
+@section('about_text', 'Par mums')
+@section('AboutUs', '/AboutUs')
 @section('content')
     <section class="content">
         <div class="container-fluid">
@@ -12,6 +14,7 @@
                         @csrf
                         @method('PATCH')
                         <div class="form-group">
+                            <input type="hidden" name="id" value="{{ $places->id }}">
                             <input type="text" class="form-control" name="name" placeholder="Ceļojuma galamērķa nosaukums"
                                 value="{{ $places->name }}">
                             <span class="text-danger">

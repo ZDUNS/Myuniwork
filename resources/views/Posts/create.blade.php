@@ -1,5 +1,7 @@
 @extends('navbar.app')
 @section('title', 'Jaunas diskusijas izveidošana')
+@section('about_text', 'Par mums')
+@section('AboutUs', '/AboutUs')
 @section('content')
     <div class="main1">
         <header>Pievienot jaunu diskusiju</header>
@@ -52,6 +54,11 @@
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" name="image">
                             </div>
+                            <span class="text-danger">
+                                @error('image')
+                                    {{ $message }}
+                                @enderror
+                            </span>
                             <div class="form-group">
                                 <label>Izvēlieties ceļojuma veidu</label>
                                 <div class="pass"></div>

@@ -1,5 +1,7 @@
 @extends('navbar.app')
 @section('title', 'Ceļo droši')
+@section('about_text', 'Par mums')
+@section('AboutUs', '/AboutUs')
 @section('content')
 <div class="main">
 <section id="Music-in-lifeSection">

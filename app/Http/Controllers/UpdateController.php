@@ -67,12 +67,29 @@ class UpdateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRequest $request,Vehicle $vehicles)
-    { 
-        $data = $request->validated();
-        $vehicles->update($data);
+    public function update(Request $request)
+    {
+     $request->validate([
+        'name' => 'required | string |min:3|max:100 | unique:vehicle',
+     ],
+        [
+            'name.required' => 'Lūdzu aizpildiet šo lauku!',
+            'name.unique' => 'Šāds ceļojuma veids jau eksistē!',
+            'name.min' => 'Ceļojuma veida nosaukumam jāsatur vismaz 3 simboli!',
+            'name.max' => 'Ceļojuma veida nosaukumam jāsatur ne vairāk par 100 simboliem!',
+        ]);
+    // Atjaunot informāciju db
+    $vehicles = Vehicle::find($request->id);
+    $vehicles->name = $request->name;
+    // Saglabāt atjaunoto informāciju db
+    $res = $vehicles->save();
+    //Nosacījumi ko darīt, ja sistemā bija kļūda un ja viss bija labi
+    if ($res) {
         return view('Vehicle.show', compact('vehicles'));
+    } else {
+        return back()->with('fail', 'Kaut kas nogāja greizi!');
     }
+}
 
     /**
      * Remove the specified resource from storage.

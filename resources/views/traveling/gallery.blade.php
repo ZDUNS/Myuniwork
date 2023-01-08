@@ -1,5 +1,7 @@
 @extends('navbar.app')
 @section('title', 'Ceļojumu iedvesmas foto')
+@section('about_text', 'Par mums')
+@section('AboutUs', '/AboutUs')
 @section('content')
 <section id="music">
     <div class="music container">

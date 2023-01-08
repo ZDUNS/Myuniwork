@@ -1,5 +1,7 @@
 @extends('navbar.app')
 @section('title', 'Ceļojuma veida rediģēšana')
+@section('about_text', 'Par mums')
+@section('AboutUs', '/AboutUs')
 @section('content')
     <section class="content">
         <div class="container-fluid">
@@ -12,14 +14,15 @@
                         @csrf
                         @method('PATCH')
                         <div class="form-group">
+                            <input type="hidden" name="id" value="{{ $vehicles->id }}">
                             <input type="text" class="form-control" name="name" placeholder="Ceļojuma veida nosaukums"
                                 value="{{ $vehicles->name }}">
-                            <span class="text-danger">
-                                @error('name')
-                                    {{ $message }}
-                                @enderror
-                            </span>
                         </div>
+                        <span class="text-danger">
+                            @error('name')
+                                {{ $message }}
+                            @enderror
+                        </span>
                         <input type="submit" class="btn btn-primary" value="Rediģēt">
                     </form>
                 </div>

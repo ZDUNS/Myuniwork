@@ -12,15 +12,6 @@ body {
 	transition: 0.5s;
 	text-decoration: none;
   }
-  
-  a:hover,
-  a:active,
-  a:focus {
-	color: #a11bae;
-	outline: none;
-	text-decoration: none;
-  }
-  
   h3,
   h4,
   h6 {
@@ -29,53 +20,6 @@ body {
 	margin: 0 0 20px 0;
 	padding: 0;
   }
-
-  /* Prelaoder */
-  #preloader {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 9999;
-	overflow: hidden;
-	background: #fff;
-  }
-  
-  #preloader:before {
-	content: "";
-	position: fixed;
-	top: calc(50% - 30px);
-	left: calc(50% - 30px);
-	border: 6px solid #f2f2f2;
-	border-top: 6px solid #a11bae;
-	border-radius: 50%;
-	width: 60px;
-	height: 60px;
-	-webkit-animation: animate-preloader 1s linear infinite;
-	animation: animate-preloader 1s linear infinite;
-  }
-  
-  @-webkit-keyframes animate-preloader {
-	0% {
-	  transform: rotate(0deg);
-	}
-  
-	100% {
-	  transform: rotate(360deg);
-	}
-  }
-  
-  @keyframes animate-preloader {
-	0% {
-	  transform: rotate(0deg);
-	}
-  
-	100% {
-	  transform: rotate(360deg);
-	}
-  }
-
   /*--------------------------------------------------------------
   # Header
   --------------------------------------------------------------*/
@@ -280,7 +224,7 @@ body {
     background-color: white;
   }
   .main select {
-  width: 42.5rem;
+  width: 35.5rem;
   height: 1.5rem;
   border: 1px solid #727272;
   border-radius: 3px;
@@ -315,22 +259,11 @@ body {
   /*--------------------------------------------------------------
   # Gallery view
   --------------------------------------------------------------*/
-  .imageSection {
-    background-image: url(./img/4AT2p7.png);
-    height: 750px;
-    background-position: center;
-   /* background-repeat: no-repeat;*/
-   /* background-size: cover;*/
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /*you may be interested teksts*/
-    }
-    
     /*side by side section*/
     
     * {
     box-sizing: border-box;
     }
-    
-    /*composers gallery*/
     img{
       width:100%;
     }
@@ -344,12 +277,11 @@ body {
     .column {
     float: left;
     width: 20%;  /*platums*/
-    padding: 8px; /*lai no melna ramja mazaks*/
+    padding: 8px; /*lai no ramja mazaks*/
     font-size:20px;
     transition: transform .3s; /*uzliekot kursoru, pietuvinas 3s*/
     margin:2.5%; /*atstarpe starp viniem, lai varetu ielist skaisti*/
     background-color: #a11bae;
-    ;
    /* background-position: left;*/
    /* background-repeat: no-repeat;*/
     font-family: "Open Sans";
@@ -367,7 +299,7 @@ body {
     }
     }
   
-   /*Composers galleery teksts */
+   /* galleery teksts */
     p{
       font-size: 22px;
       color: black;

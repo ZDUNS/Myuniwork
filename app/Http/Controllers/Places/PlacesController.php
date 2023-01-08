@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Places;
-
-use App\Http\Requests\Places\UpdatePlacesRequest;
 use App\Models\Places;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -70,12 +68,29 @@ class PlacesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePlacesRequest $request, Places $places)
+    public function update(Request $request)
     {
-        $data = $request->validated();
-        $places->update($data);
+     $request->validate([
+        'name' => 'required | string |min:3|max:100 | unique:places',
+     ],
+        [
+            'name.required'=>'Lūdzu aizpildiet šo lauku!',
+            'name.unique'=>'Šāds ceļojuma galamērķis jau eksistē!',
+            'name.min'=>'Ceļojuma galamērķim jāsatur vismaz 3 simboli!',
+            'name.max'=>'Ceļojuma galamērķim jāsatur ne vairāk par 100 simboliem!',
+        ]);
+    // Atjaunot datus datubāzē
+    $places = Places::find($request->id);
+    $places->name = $request->name;
+    // Saglabāt atjaunotā galamerķa datus db
+    $res = $places->save();
+    // Ja sistemā notiks kaut kas geizi, tiks izvadits paziņojums, citadak atgriezt skatu
+    if ($res) {
         return view('Places.show', compact('places'));
+    } else {
+        return back()->with('fail', 'Kaut kas nogāja greizi!');
     }
+}
 
     /**
      * Remove the specified resource from storage.
@@ -83,6 +98,7 @@ class PlacesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //Galamērķu dzešana
     public function destroy(Places $places)
     {
         Places::find($places);

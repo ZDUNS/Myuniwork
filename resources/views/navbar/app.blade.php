@@ -24,7 +24,7 @@
                 <nav id="navbar" class="navbar">
                     <ul>
                         <li><a class="nav-link scrollto active" href="{{ url('welcome') }}">Galvenais skats</a></li>
-                        <li><a class="nav-link scrollto" href="AboutUs">Par mums</a></li>
+                        <li><a class="nav-link scrollto" href="@yield('AboutUs')">@yield('about_text')</a></li>
                         <li><a class="nav-link scrollto" href="#services">Pēdējie jaunumi</a></li>
                         @if (!Auth::guest() && Auth::user()->isAdmin())
                         <li><a class="nav-link scrollto " href="{{ url('Alldata') }}">Administratora skats</a></li>

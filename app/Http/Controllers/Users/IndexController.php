@@ -131,15 +131,15 @@ class IndexController extends Controller
             
 
     ]);
-    // Update the event information in the database
+    // Atjaunot lietotāja datus datu bāzē
     $users = User::find($request->id);
     $users->username = $request->username;
     $users->firstName = $request->firstName;
     $users->lastName = $request->lastName;
     $users->email = $request->email;
-    // Save the updated event information in the database
+    // Saglabāt atjaunotā lietotāja datus db
     $res = $users->save();
-    // Display a success or failure message to the user
+    // Ja notika kļūda sistēmā, atgriezt paziņojumu, citādāk redirect uz skatu
     if ($res) {
         return view('User.show', compact('users'));
     } else {

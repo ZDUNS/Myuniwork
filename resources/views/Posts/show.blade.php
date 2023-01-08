@@ -1,5 +1,7 @@
 @extends('navbar.app')
 @section('title', 'Diskusijas')
+@section('about_text', 'Par mums')
+@section('AboutUs', '/AboutUs')
 @section('content')
     <div class="col-sm-6 d-flex">
         <div class="main1">

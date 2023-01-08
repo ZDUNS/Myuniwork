@@ -18,20 +18,18 @@ class CheckpostOwnerMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        // Get the authenticated user
+        // Saņem autentificēto lietotāju
         $authenticatedUser = auth()->user()->id;
-        // Get the user id from the route parameter
+        // Saņemam lietotāja id no route parametra
         $postId = $request->route('posts')->id;
         $post = Post::where('id', $postId)->first();
-        // Check if the authenticated user has the same id as the user in the route parameter
+        // pārbaudām vai autentificētais lietotaja id sakrīt
         if ($post && $authenticatedUser == $post->user_id) {
-            // The authenticated user has the same id as the user in the route parameter, so proceed with the request
             return $next($request);
         }
         if (auth::check() && auth::user()->isAdmin()) {
             return $next($request);
         }
-        // The authenticated user does not have the same id as the user in the route parameter, so redirect to a different page or return a response
         return redirect('/');
     }
 }

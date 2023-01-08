@@ -12,6 +12,7 @@ class Vehicle extends Model
     use SoftDeletes;
 
     protected $table = 'vehicle';
+    protected $fillable=['name'];
     protected $guarded = false; //lai tabula mainit
     //public $timestamps=false;
     protected $primaryKey = 'id';
