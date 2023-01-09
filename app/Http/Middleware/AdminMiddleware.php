@@ -18,7 +18,7 @@ class AdminMiddleware
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next)
-
+// Pārbaudām, vai lietotājs ir administrators, ja nav, tad piekļuve tiek liegta un lietotājs ir pāradresēts uz citu skatu.
     {
         if (!(auth::check() && auth::user()->isAdmin())) {
             return redirect('welcome')->withErrors('Piekļuve administratora funkcijām ir aizliegta!');

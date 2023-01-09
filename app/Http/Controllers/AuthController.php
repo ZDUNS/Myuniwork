@@ -52,6 +52,7 @@ class AuthController extends Controller
                 'password.max' => 'Parolei jāsatur ne vairāk par 18 simboliem!',
             ]
         );
+        //Pieprasām un pārbaudām ievadītos datus
         $users = new User();
         $users->username = $request->username;
         $users->firstName = $request->firstName;
@@ -65,6 +66,7 @@ class AuthController extends Controller
             return back()->with('fail', 'Reģistrācija neizdevās');
         }
     }
+    //Pieteikšanās funkcija, kurā tiek pārbaudīti lietotāja ievadītie dati, salīdzināti ar datu bāzē jau esošajiem, ja kādi dati nesakrīt, tiek izvadīta kļūda
     public function loginUser(Request $request)
     {
         $request->validate(
