@@ -2,11 +2,14 @@
 @section('title', 'Diskusijas rediģēšana')
 @section('about_text', 'Par mums')
 @section('AboutUs', '/AboutUs')
+@section('logout_text', 'Iziet')
+@section('logout', '/logout')
 @section('content')
     <section class="content">
         <div class="container-fluid">
             <div class="row">
                 <div class="main1">
+                    <!-- Diskusijas rediģēšanā ir iekļauti faili, kuriem tiek padoti jau esošie dati, iesniedzot tos nerādās kļūda, jo tie tiek pēc noklusējuma atteloti-->
                     <fieldset>
                         <legend>Diskusijas rediģēšana</legend>
                     <h1>Ceļojumu kalendārs</h1>

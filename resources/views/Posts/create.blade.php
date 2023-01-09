@@ -2,8 +2,11 @@
 @section('title', 'Jaunas diskusijas izveidošana')
 @section('about_text', 'Par mums')
 @section('AboutUs', '/AboutUs')
+@section('logout_text', 'Iziet')
+@section('logout', '/logout')
 @section('content')
     <div class="main1">
+        <!-- Tiek padoti atribūti, kurus aipildot var izveidot diskusiju, tacu nepareizas aizpildes gadījuma tiek ziņotas kļūdas.-->
         <fieldset>
         <legend>Pievienot jaunu diskusiju</legend>
         <h1>Ceļojumu kalendārs</h1>

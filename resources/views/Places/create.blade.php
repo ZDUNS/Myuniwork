@@ -2,8 +2,11 @@
 @section('title', 'Jauna ceļojuma galamērķa pievienošana')
 @section('about_text', 'Par mums')
 @section('AboutUs', '/AboutUs')
+@section('logout_text', 'Iziet')
+@section('logout', '/logout')
 @section('content')
     <body>
+        <!-- Ceļojuma galamērķa izveidošanas skats, kurā dati tiek saglabāti store funkcijā, neveiksmes gadījuma tiek ziņots par kļūdu -->
         <section class="content">
             <div class="container-fluid">
                 <div class="main">

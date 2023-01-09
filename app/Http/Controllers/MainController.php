@@ -15,6 +15,7 @@ class MainController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //Saskaitām kopējos atrinūtus funkcijām un ļaijam administratoram tos skatīt.
     public function index()
     {
         $data = [];

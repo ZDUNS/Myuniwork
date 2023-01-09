@@ -39,6 +39,7 @@ class StoreController extends Controller
            // 'name'=> 'required | string |min:3|max:191 | unique:vehicle',
        // );
         //$this->validate($request, $rules);
+        //Pārbaudām, vai padotie dati jau eksiste atmiņā, vai ir jāveido jauni
         $request->validate(
             [
             'name'=>'required | string |min:3|max:100 | unique:vehicle',

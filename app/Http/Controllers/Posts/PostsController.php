@@ -22,6 +22,7 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //Tiek ievietoti visi dati, iekļauti arī citu atribūti, tiek pārbaudīs, vai lietotājs arī ir ielogojies un tiek dabūts sesijas logina id
     public function index(Request $request)
     {
         $users = User::find($request->session()->get('loginId'));

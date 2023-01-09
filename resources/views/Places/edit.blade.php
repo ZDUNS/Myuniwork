@@ -2,11 +2,14 @@
 @section('title', 'Ceļojuma galamērķu rediģēšana')
 @section('about_text', 'Par mums')
 @section('AboutUs', '/AboutUs')
+@section('logout_text', 'Iziet')
+@section('logout', '/logout')
 @section('content')
     <section class="content">
         <div class="container-fluid">
             <div class="main">
                 <div class="col-12">
+                    <!-- Ceļojuma galamērķa rediģēšana, šajā skatā pēc noklusējuma tiek padots jau esošais galamērķis, un dota iespēja to rediģēt, izmantojot update funkciju.-->
                     <h2 class="mb-3">
                         Ceļojuma galamērķa rediģēšana
                     </h2>

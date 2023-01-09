@@ -12,7 +12,7 @@
 <body>
     <div class="container"></div>
     <div class="row">
-        <!-- <div class="col-md-4 col-md-offset-4" style="margin-top:20px;"> -->
+        <!-- Lietotāja reģistrācijas skats, kurā tiek padoti aizpildāmie atribūti un neveiksmes gadījumā padotas kļūdas -->
         <header>Reģistrācija</header>
         <form action="{{ route('register-user') }}" method="post">
             @csrf

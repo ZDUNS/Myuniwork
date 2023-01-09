@@ -12,7 +12,7 @@
 <body>
     <div class="container"></div>
     <div class="row">
-        <!-- <div class="col-md-4 col-md-offset-4" style="margin-top:20px;"> -->
+        <!-- pieteikšanās skats, kurā tiek pārbaudīts, vai lietotājs ir reģistrējies un vai viņa dati tika pareizi ievadīti (ja netika, izvadīt kļūdu)-->
         <header>Pieteikšanās</header>
         <form action="{{ route('login-user') }}" method="post">
             @csrf
@@ -23,7 +23,6 @@
                 <div class="error-div">{{ Session::get('fail') }}</div>
             @endif
             <div class="field space">
-                <!-- <label for="name">Lietotāja vārds</label> -->
                 <input type="text" class="form-control" placeholder="   Ievadiet lietotāja vārdu" name="username"
                     value="{{ old('username') }}">
             </div>
@@ -33,7 +32,6 @@
                 @enderror
             </span>
             <div class="field space">
-                <!-- <label for="password">Parole</label> -->
                 <input type="password" class="form-control" placeholder="   Ievadiet paroli" name="password"
                     value="{{ old('password') }}">
             </div>

@@ -2,8 +2,11 @@
 @section('title', 'Ceļojuma veids')
 @section('about_text', 'Par mums')
 @section('AboutUs', '/AboutUs')
+@section('logout_text', 'Iziet')
+@section('logout', '/logout')
 @section('content')
     <div class="main">
+        <!-- Parādam lietotājam konkrēta atribūta ID un nosaukumu -->
         <h1 class="m-0">{{ $vehicles->name }}</h1>
         <a href="{{ route('Vehicle.edit', $vehicles->id) }}"><i class="fas fa-pencil-alt"></i></a>
         <section class="content">

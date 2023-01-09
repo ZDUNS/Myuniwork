@@ -2,6 +2,8 @@
 @section('title', 'Mans profils')
 @section('about_text', 'Par mums')
 @section('AboutUs', '/AboutUs')
+@section('logout_text', 'Iziet')
+@section('logout', '/logout')
 @section('content')
     <section class="content">
         <div class="container-fluid">

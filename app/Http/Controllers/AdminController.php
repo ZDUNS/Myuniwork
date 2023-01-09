@@ -7,7 +7,7 @@ class AdminController extends Controller
     // Middleware
     public function __construct()
     {
-        // Tikai adminam ir piekluve
+        // Tikai administratoram ir piekluve
         $this->middleware('admin');
     }
 

@@ -2,12 +2,15 @@
 @section('title', 'Ceļojumu galamērķi')
 @section('about_text', 'Par mums')
 @section('AboutUs', '/AboutUs')
+@section('logout_text', 'Iziet')
+@section('logout', '/logout')
 @section('content')
     <section class="content">
         <div class="container-fluid">
             <div class="main">
                 <div class="col-12">
                 </div class="card">
+                <!-- Tiek parādīts saraksts ar visiem iespējamajiem galamērķiem, papildus administratoram tiek dotas konkrētas funkcijas, kuras tiek implementētas ar idAdmin palīdzību -->
                 <div class="card-body table-responsive p-0">
                     <thead>
                         @if ($places->isEmpty())

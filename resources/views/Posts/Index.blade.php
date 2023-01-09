@@ -2,11 +2,14 @@
 @section('title', 'Visas diskusijas')
 @section('about_text', 'Par mums')
 @section('AboutUs', '/AboutUs')
+@section('logout_text', 'Iziet')
+@section('logout', '/logout')
 @section('content')
     <section class="content">
         <div class="container-fluid">
             <div class="col-12">
             <div class="main">
+                <!-- Rediģēt un dzēst iespējas ir tikai administratoram un diskusijas veidotājam -->
             <div class="card-body table-responsive p-0">
                 <table class="table table-hover text-nowrap">
                     <thead>

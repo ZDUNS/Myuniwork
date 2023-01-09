@@ -2,6 +2,8 @@
 @section('title', 'Mana informācija')
 @section('about_text', 'Par mums')
 @section('AboutUs', '/AboutUs')
+@section('logout_text', 'Iziet')
+@section('logout', '/logout')
 @section('content')
     <div class="main">
         <h1 class="m-0">{{Auth::user()->username }}</h1>

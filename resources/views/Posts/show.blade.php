@@ -2,6 +2,8 @@
 @section('title', 'Diskusijas')
 @section('about_text', 'Par mums')
 @section('AboutUs', '/AboutUs')
+@section('logout_text', 'Iziet')
+@section('logout', '/logout')
 @section('content')
     <div class="col-sm-6 d-flex">
         <div class="main1">

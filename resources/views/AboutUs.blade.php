@@ -2,6 +2,8 @@
 @section('title', 'Par mums!')
 @section('about_text', 'Par mums')
 @section('AboutUs', '/AboutUs')
+@section('logout_text', 'Iziet')
+@section('logout', '/logout')
 @section('content')
 <div class="main">
 <section id="Music-in-lifeSection">

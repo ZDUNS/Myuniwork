@@ -13,7 +13,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700"
         rel="stylesheet">
-
+<!-- Galvenās izvēlnes skats, kurs tiek implementēts katrā skatā, daži skati pieejami tikai administratoram, tie tiek pārbauydīti ar isAdmin, kas tiek noteikts atiiecīgajā middleware -->
 </head>
 <header id="header" class="fixed-top d-flex align-items-center header-transparent">
     <div class="container-fluid">
@@ -55,7 +55,7 @@
                         <li class="dropdown"><a href="{{ url('User') }}"><span>Mans profils</span> <i
                                     class="bi bi-chevron-down"></i></a>
                             <ul>
-                                <li><a href="logout">Iziet</a></li>
+                                <li><a href="@yield('logout')">@yield('logout_text')</a></li>
                             </ul>
                         </li>
                         <i class="bi bi-list mobile-nav-toggle"></i>
