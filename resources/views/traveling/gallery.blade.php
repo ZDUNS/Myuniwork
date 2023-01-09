@@ -6,7 +6,6 @@
 <section id="music">
     <div class="music container">
     <div>
-    <h1>Smelies ceļojumu iedvesmu</h1>
   </div>
     </div>
 </section>
