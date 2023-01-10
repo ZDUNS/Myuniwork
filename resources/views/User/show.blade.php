@@ -8,14 +8,6 @@
     <div class="main">
         <h1 class="m-0">{{Auth::user()->username }}</h1>
         <a href="{{ route('User.edit', $users->id) }}"><i class="fas fa-pencil-alt"></i></a>
-        <form action="{{ route('User.delete', $users->id) }}" method="POST">
-            @csrf
-            @method('DELETE')
-            <button type="submit"
-                onclick="return confirm('Vai tiešām vēlies dzēst savu profilu?');"
-                class="border-0">
-                <i class="fas fa-trash text-danger"></i>
-            </button>
         </form>
         <section class="content">
             <div class="container-fluid">

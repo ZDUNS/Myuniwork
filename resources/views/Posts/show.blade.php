@@ -12,7 +12,7 @@
             <header>{{ $posts->title }}</header>
             <div class="form-group">
                 <h1>Ceļojumu kalendārs</h1>
-        <iframe src="https://calendar.google.com/calendar/embed?height=500&wkst=1&bgcolor=%23B39DDB&ctz=Europe%2FRiga&src=bGllbmVyZWNhNDhAZ21haWwuY29t&color=%23039BE5" style="border:solid 1px #777" width="500" height="500" frameborder="0" scrolling="no"></iframe>
+        <iframe class="calendar" src="https://calendar.google.com/calendar/embed?height=500&wkst=1&bgcolor=%23B39DDB&ctz=Europe%2FRiga&src=bGllbmVyZWNhNDhAZ21haWwuY29t&color=%23039BE5" style="border:solid 1px #777" width="500" height="500" frameborder="0" scrolling="no"></iframe>
                 <br>
         <label>Ceļojuma galamērķis: <td>{{ $place->name }}</td></label>
         <br>
@@ -29,15 +29,18 @@
                     <br>
                     <label>Ceļojuma veids: <td>{{ $vehicle->name }}</td></label>
                 </div>
-                <label>Atbildes:</label>
+                <label class="ans">Atbildes:</label>
                 @if ($answers->isEmpty())
                 <p>Nav atrasta neviena atbilde!</p>
                 @else
+                <div class="answers">
                 @foreach ($answers as $answer)
-                    <p>{{ $answer->user->username }}
-                    <div>{{ $answer->description }}</div>
+                    <p class="answer">{{ $answer->user->username }}</p>
+                    <div class=" answer"> {{ $answer->description }}</div>
+                    <br>
                 @endforeach
                 @endif
+            </div>
                 <br>
                 <legend>Pievienot atbildi</legend>
                 <br>
